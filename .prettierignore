@@ -1,0 +1,13 @@
+# Ignore artifacts:
+dist
+*.html
+node_modules
+dist
+src/lib
+.vscode
+.eslintrc.js
+package.json
+package-lock.json
+config
+*.js
+*.html
