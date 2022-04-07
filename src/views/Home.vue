@@ -43,7 +43,7 @@
             <template #item>
               <div
                 class="education"
-                style="width: 540px; height: 200px; margin-top: 20px"
+                style="width: 540px; height: 220px;margin-top:-20px;"
                 ref="education"
               ></div>
             </template>
@@ -58,7 +58,7 @@
             </div>
             <div
               class="map-item"
-              style="width: 720px; height: 500px; margin-top: 60px"
+              style="width: 720px; height: 480px; margin-top: 60px"
               ref="map"
             ></div>
           </div>
@@ -272,6 +272,8 @@ export default {
           height: 560px;
           margin-left: 45px;
           position: relative;
+          overflow: hidden;
+          margin-bottom: 10px;
           .title {
             height: 16px;
             font-family: MicrosoftYaHei;
@@ -282,6 +284,7 @@ export default {
             letter-spacing: 1px;
             color: #aee0ff;
             position: relative;
+
           }
           .btn {
             transform: translateY(40px);
