@@ -490,21 +490,21 @@ const age = (element, dispose) => {
 // 教育分布
 const education = (element, dispose) => {
   var myChart = echarts.init(element)
-var format=[  { value: 60, name: '硕士及以上',pepole:'2.1万',scale:'21.5%' },
-{ value: 40, name: '高中',pepole:'2.1万',scale:'21.5%' },
-{ value: 20, name: '专科',pepole:'2.1万',scale:'21.5%' },
-{ value: 80, name: '本科',pepole:'2.1万',scale:'21.5%' },
-{ value: 100, name: '中专及以下',pepole:'2.1万',scale:'21.5%' }]
+  var format = [{ value: 60, name: '硕士及以上', pepole: '2.1万', scale: '21.5%' },
+    { value: 40, name: '高中', pepole: '2.1万', scale: '21.5%' },
+    { value: 20, name: '专科', pepole: '2.1万', scale: '21.5%' },
+    { value: 80, name: '本科', pepole: '2.1万', scale: '21.5%' },
+    { value: 100, name: '中专及以下', pepole: '2.1万', scale: '21.5%' }]
   const option = {
     color: ['#37A2DA', '#3de6e3', '#35a9c3', '#378acc', '#2f54ac'],
     tooltip: {
       show: false,
-      trigger: 'item',
+      trigger: 'item'
       // formatter: function (params) {
       //   '<br/>{b} : {c}%'
       // }
     },
-   
+
     series: [
       {
         name: '预期',
@@ -515,48 +515,48 @@ var format=[  { value: 60, name: '硕士及以上',pepole:'2.1万',scale:'21.5%'
         height: '90%',
         sort: 'ascending',
         z: 2,
-     
+
         itemStyle: {
 
         },
         label: {
           show: true,
-          formatter:function(item){
+          formatter: function (item) {
             // console.log(item)
-                const res=format.find(it=>it.name===item.name)
-                const i = `{a|${res.name}}\n{b|${res.pepole}}  {c|${res.scale}}`
-                return i
+            const res = format.find(it => it.name === item.name)
+            const i = `{a|${res.name}}\n{b|${res.pepole}}  {c|${res.scale}}`
+            return i
           },
           rich: {
             a: {
-              color: "#5cbcff",
-              fontSize: 14,
+              color: '#5cbcff',
+              fontSize: 14
             },
             b: {
-              color: "rgba(101,166,196,1)",
-              fontSize: 12,
+              color: 'rgba(101,166,196,1)',
+              fontSize: 12
             },
             c: {
-              color: "#fff",
-              fontSize: 12,
-            },
+              color: '#fff',
+              fontSize: 12
+            }
 
-          },
+          }
         },
         labelLine: {
           length: 35,
           lineStyle: {
             width: 1,
-            type: "solid",
-          },
+            type: 'solid'
+          }
         },
-        data: 
-          [  { value: 60, name: '硕士及以上' },
-          { value: 40, name: '高中' },
-          { value: 20, name: '专科' },
-          { value: 80, name: '本科' },
-          { value: 100, name: '中专及以下' },
-          { value: 100, name: '中专及以下' }]
+        data:
+          [{ value: 60, name: '硕士及以上' },
+            { value: 40, name: '高中' },
+            { value: 20, name: '专科' },
+            { value: 80, name: '本科' },
+            { value: 100, name: '中专及以下' },
+            { value: 100, name: '中专及以下' }]
       },
       {
         name: '实际',
@@ -1117,23 +1117,23 @@ const nation = (element, dispose) => {
 const map = (element, dispose) => {
   var myChart = echarts.init(element)
   var chinaMap = {
-    type: "FeatureCollection",
+    type: 'FeatureCollection',
     features: [
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 110000,
-          name: "北京市",
+          name: '北京市',
           center: [116.405285, 39.904989],
           centroid: [116.41989, 40.189913],
           childrenNum: 16,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 0,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -1264,27 +1264,27 @@ const map = (element, dispose) => {
                 [117.367089, 40.172844],
                 [117.367089, 40.172387],
                 [117.344299, 40.13443],
-                [117.210024, 40.082262],
-              ],
-            ],
-          ],
-        },
+                [117.210024, 40.082262]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 120000,
-          name: "天津市",
+          name: '天津市',
           center: [117.190182, 39.125596],
           centroid: [117.351154, 39.28914],
           childrenNum: 16,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 1,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -1398,26 +1398,26 @@ const map = (element, dispose) => {
                 [117.152126, 39.878239],
                 [117.150894, 39.944785],
                 [117.198322, 39.992933],
-                [117.210024, 40.082262],
-              ],
-            ],
-          ],
-        },
+                [117.210024, 40.082262]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 130000,
-          name: "河北省",
+          name: '河北省',
           center: [114.502461, 38.045474],
           childrenNum: 11,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 2,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -1911,8 +1911,8 @@ const map = (element, dispose) => {
                 [117.652269, 40.12345],
                 [117.571581, 40.21809],
                 [117.450857, 40.252347],
-                [117.389879, 40.228141],
-              ],
+                [117.389879, 40.228141]
+              ]
             ],
             [
               [
@@ -1946,27 +1946,27 @@ const map = (element, dispose) => {
                 [116.983975, 39.63906],
                 [116.916837, 39.703996],
                 [116.916837, 39.703996],
-                [116.90575, 39.687883],
-              ],
-            ],
-          ],
-        },
+                [116.90575, 39.687883]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 140000,
-          name: "山西省",
+          name: '山西省',
           center: [112.549248, 37.857014],
           centroid: [112.305144, 37.619053],
           childrenNum: 11,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 3,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -2160,27 +2160,27 @@ const map = (element, dispose) => {
                 [113.588301, 36.562955],
                 [113.554425, 36.494682],
                 [113.708409, 36.423461],
-                [113.731199, 36.363257],
-              ],
-            ],
-          ],
-        },
+                [113.731199, 36.363257]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 150000,
-          name: "内蒙古自治区",
+          name: '内蒙古自治区',
           center: [111.670801, 40.818311],
           centroid: [114.059024, 44.315561],
           childrenNum: 12,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 4,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -3069,8 +3069,8 @@ const map = (element, dispose) => {
                 [123.419925, 43.409955],
                 [123.486446, 43.445587],
                 [123.608402, 43.366474],
-                [123.703873, 43.370824],
-              ],
+                [123.703873, 43.370824]
+              ]
             ],
             [
               [
@@ -3162,27 +3162,27 @@ const map = (element, dispose) => {
                 [124.43992, 50.539919],
                 [124.322892, 50.532693],
                 [124.289015, 50.553226],
-                [124.076516, 50.564249],
-              ],
-            ],
-          ],
-        },
+                [124.076516, 50.564249]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 210000,
-          name: "辽宁省",
+          name: '辽宁省',
           center: [123.429096, 41.796767],
           centroid: [122.606135, 41.300702],
           childrenNum: 14,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 5,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -3479,35 +3479,35 @@ const map = (element, dispose) => {
                 [119.037516, 41.067509],
                 [119.126212, 41.138744],
                 [119.2494, 41.279634],
-                [119.239545, 41.314696],
-              ],
+                [119.239545, 41.314696]
+              ]
             ],
             [
               [
                 [122.969057, 39.513158],
                 [122.978912, 39.561609],
                 [123.036194, 39.533004],
-                [122.969057, 39.513158],
-              ],
-            ],
-          ],
-        },
+                [122.969057, 39.513158]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 220000,
-          name: "吉林省",
+          name: '吉林省',
           center: [125.3245, 43.886841],
           centroid: [126.171246, 43.703944],
           childrenNum: 9,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 6,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -3885,27 +3885,27 @@ const map = (element, dispose) => {
                 [125.875059, 40.90853],
                 [125.817161, 40.866915],
                 [125.785132, 40.895867],
-                [125.707523, 40.866915],
-              ],
-            ],
-          ],
-        },
+                [125.707523, 40.866915]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 230000,
-          name: "黑龙江省",
+          name: '黑龙江省',
           center: [126.642464, 45.756967],
           centroid: [127.693002, 48.040469],
           childrenNum: 13,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 7,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -4484,8 +4484,8 @@ const map = (element, dispose) => {
                 [123.565902, 46.22601],
                 [123.498765, 46.259528],
                 [123.373113, 46.223112],
-                [123.319527, 46.253736],
-              ],
+                [123.319527, 46.253736]
+              ]
             ],
             [
               [
@@ -4510,27 +4510,27 @@ const map = (element, dispose) => {
                 [124.289015, 50.553226],
                 [124.322892, 50.532693],
                 [124.43992, 50.539919],
-                [124.43992, 50.388713],
-              ],
-            ],
-          ],
-        },
+                [124.43992, 50.388713]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 310000,
-          name: "上海市",
+          name: '上海市',
           center: [121.472644, 31.231706],
           centroid: [121.438732, 31.072508],
           childrenNum: 16,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 8,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -4562,8 +4562,8 @@ const map = (element, dispose) => {
                 [121.713773, 31.308992],
                 [121.946598, 31.065861],
                 [121.990945, 30.968434],
-                [121.970004, 30.789217],
-              ],
+                [121.970004, 30.789217]
+              ]
             ],
             [
               [
@@ -4579,51 +4579,51 @@ const map = (element, dispose) => {
                 [121.819098, 31.438237],
                 [121.547469, 31.531101],
                 [121.434136, 31.59024],
-                [121.371926, 31.553028],
-              ],
+                [121.371926, 31.553028]
+              ]
             ],
             [
               [
                 [121.74149, 31.345792],
                 [121.509897, 31.482639],
                 [121.742106, 31.407091],
-                [121.74149, 31.345792],
-              ],
+                [121.74149, 31.345792]
+              ]
             ],
             [
               [
                 [121.844352, 31.294678],
                 [121.792613, 31.377468],
                 [121.914569, 31.343236],
-                [121.844352, 31.294678],
-              ],
+                [121.844352, 31.294678]
+              ]
             ],
             [
               [
                 [121.943518, 31.215397],
                 [122.008808, 31.221026],
                 [121.995873, 31.160629],
-                [121.943518, 31.215397],
-              ],
-            ],
-          ],
-        },
+                [121.943518, 31.215397]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 320000,
-          name: "江苏省",
+          name: '江苏省',
           center: [118.767413, 32.041544],
           centroid: [119.48196, 32.985864],
           childrenNum: 13,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 9,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -4826,27 +4826,27 @@ const map = (element, dispose) => {
                 [121.759352, 32.059471],
                 [121.856055, 31.95546],
                 [121.970004, 31.719096],
-                [121.974931, 31.617249],
-              ],
-            ],
-          ],
-        },
+                [121.974931, 31.617249]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 330000,
-          name: "浙江省",
+          name: '浙江省',
           center: [120.153576, 30.287459],
           centroid: [120.109522, 29.181876],
           childrenNum: 11,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 10,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -5017,8 +5017,8 @@ const map = (element, dispose) => {
                 [120.673451, 27.369708],
                 [120.572437, 27.313903],
                 [120.544104, 27.154303],
-                [120.461568, 27.14259],
-              ],
+                [120.461568, 27.14259]
+              ]
             ],
             [
               [
@@ -5031,8 +5031,8 @@ const map = (element, dispose) => {
                 [122.152938, 30.113015],
                 [122.293988, 30.100075],
                 [122.347574, 30.014109],
-                [122.301379, 29.942068],
-              ],
+                [122.301379, 29.942068]
+              ]
             ],
             [
               [
@@ -5040,16 +5040,16 @@ const map = (element, dispose) => {
                 [122.228082, 30.329641],
                 [122.22993, 30.232503],
                 [122.058083, 30.291934],
-                [122.100583, 30.304333],
-              ],
+                [122.100583, 30.304333]
+              ]
             ],
             [
               [
                 [122.317393, 30.249561],
                 [122.40732, 30.272817],
                 [122.397465, 30.225266],
-                [122.317393, 30.249561],
-              ],
+                [122.317393, 30.249561]
+              ]
             ],
             [
               [
@@ -5057,8 +5057,8 @@ const map = (element, dispose) => {
                 [122.391922, 29.831573],
                 [122.327248, 29.922883],
                 [122.411632, 29.951918],
-                [122.435038, 29.906287],
-              ],
+                [122.435038, 29.906287]
+              ]
             ],
             [
               [
@@ -5066,16 +5066,16 @@ const map = (element, dispose) => {
                 [122.423335, 30.408624],
                 [122.281669, 30.418944],
                 [122.277973, 30.471558],
-                [122.353734, 30.464339],
-              ],
+                [122.353734, 30.464339]
+              ]
             ],
             [
               [
                 [122.303843, 29.832611],
                 [122.310002, 29.766671],
                 [122.221307, 29.832611],
-                [122.303843, 29.832611],
-              ],
+                [122.303843, 29.832611]
+              ]
             ],
             [
               [
@@ -5084,8 +5084,8 @@ const map = (element, dispose) => {
                 [122.130148, 29.79056],
                 [122.200981, 29.711082],
                 [122.192358, 29.655462],
-                [122.13138, 29.673659],
-              ],
+                [122.13138, 29.673659]
+              ]
             ],
             [
               [
@@ -5093,8 +5093,8 @@ const map = (element, dispose) => {
                 [121.970004, 30.789217],
                 [122.011271, 30.669381],
                 [121.968156, 30.68842],
-                [121.943518, 30.77688],
-              ],
+                [121.943518, 30.77688]
+              ]
             ],
             [
               [
@@ -5103,8 +5103,8 @@ const map = (element, dispose) => {
                 [121.855439, 30.085062],
                 [121.924424, 30.052441],
                 [121.933047, 29.994938],
-                [121.874533, 29.964878],
-              ],
+                [121.874533, 29.964878]
+              ]
             ],
             [
               [
@@ -5112,51 +5112,51 @@ const map = (element, dispose) => {
                 [122.154169, 29.971098],
                 [122.152322, 29.971098],
                 [122.163408, 29.988201],
-                [122.155401, 29.97058],
-              ],
+                [122.155401, 29.97058]
+              ]
             ],
             [
               [
                 [121.136638, 27.948414],
                 [121.041783, 27.943657],
                 [121.0695, 27.984349],
-                [121.136638, 27.948414],
-              ],
+                [121.136638, 27.948414]
+              ]
             ],
             [
               [
                 [121.134174, 27.786029],
                 [121.134174, 27.787088],
                 [121.13479, 27.787088],
-                [121.134174, 27.786029],
-              ],
+                [121.134174, 27.786029]
+              ]
             ],
             [
               [
                 [122.152322, 29.971098],
                 [122.154169, 29.971098],
                 [122.155401, 29.97058],
-                [122.152322, 29.971098],
-              ],
-            ],
-          ],
-        },
+                [122.152322, 29.971098]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 340000,
-          name: "安徽省",
+          name: '安徽省',
           center: [117.283042, 31.86119],
           centroid: [117.226894, 31.849585],
           childrenNum: 16,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 11,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -5420,8 +5420,8 @@ const map = (element, dispose) => {
                 [115.510648, 32.467768],
                 [115.510648, 32.468272],
                 [115.510648, 32.468777],
-                [115.5088, 32.468777],
-              ],
+                [115.5088, 32.468777]
+              ]
             ],
             [
               [
@@ -5435,8 +5435,8 @@ const map = (element, dispose) => {
                 [116.709882, 29.69757],
                 [116.710498, 29.69705],
                 [116.709882, 29.69757],
-                [116.717273, 29.690813],
-              ],
+                [116.717273, 29.690813]
+              ]
             ],
             [
               [
@@ -5444,8 +5444,8 @@ const map = (element, dispose) => {
                 [118.876756, 31.532631],
                 [118.870597, 31.526001],
                 [118.866285, 31.527021],
-                [118.873061, 31.53569],
-              ],
+                [118.873061, 31.53569]
+              ]
             ],
             [
               [
@@ -5454,27 +5454,27 @@ const map = (element, dispose) => {
                 [115.510648, 32.467768],
                 [115.509416, 32.466758],
                 [115.5088, 32.468777],
-                [115.510648, 32.468777],
-              ],
-            ],
-          ],
-        },
+                [115.510648, 32.468777]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 350000,
-          name: "福建省",
+          name: '福建省',
           center: [119.306239, 26.075302],
           centroid: [118.005928, 26.070282],
           childrenNum: 9,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 12,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -5697,8 +5697,8 @@ const map = (element, dispose) => {
                 [120.34146, 27.39946],
                 [120.430155, 27.258601],
                 [120.401206, 27.211253],
-                [120.461568, 27.14259],
-              ],
+                [120.461568, 27.14259]
+              ]
             ],
             [
               [
@@ -5707,8 +5707,8 @@ const map = (element, dispose) => {
                 [118.335962, 24.385148],
                 [118.316252, 24.487557],
                 [118.374766, 24.458695],
-                [118.412338, 24.514235],
-              ],
+                [118.412338, 24.514235]
+              ]
             ],
             [
               [
@@ -5716,8 +5716,8 @@ const map = (element, dispose) => {
                 [119.549362, 25.162007],
                 [119.444036, 25.202075],
                 [119.473601, 25.259988],
-                [119.532116, 25.203158],
-              ],
+                [119.532116, 25.203158]
+              ]
             ],
             [
               [
@@ -5726,35 +5726,35 @@ const map = (element, dispose) => {
                 [118.142557, 24.561588],
                 [118.20723, 24.487012],
                 [118.143173, 24.421109],
-                [118.079115, 24.444533],
-              ],
+                [118.079115, 24.444533]
+              ]
             ],
             [
               [
                 [119.737224, 26.646332],
                 [119.668238, 26.628683],
                 [119.673782, 26.681087],
-                [119.737224, 26.646332],
-              ],
-            ],
-          ],
-        },
+                [119.737224, 26.646332]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 360000,
-          name: "江西省",
+          name: '江西省',
           center: [115.892151, 28.676493],
           centroid: [115.732937, 27.636129],
           childrenNum: 11,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 13,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -5981,27 +5981,27 @@ const map = (element, dispose) => {
                 [114.076741, 28.834266],
                 [114.008988, 28.955273],
                 [113.966488, 28.945326],
-                [113.94185, 29.047374],
-              ],
-            ],
-          ],
-        },
+                [113.94185, 29.047374]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 370000,
-          name: "山东省",
+          name: '山东省',
           center: [117.000923, 36.675807],
           centroid: [118.186283, 36.374485],
           childrenNum: 17,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 14,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -6266,8 +6266,8 @@ const map = (element, dispose) => {
                 [121.153884, 37.613914],
                 [121.217326, 37.582626],
                 [121.354064, 37.595901],
-                [121.362071, 37.634292],
-              ],
+                [121.362071, 37.634292]
+              ]
             ],
             [
               [
@@ -6287,8 +6287,8 @@ const map = (element, dispose) => {
                 [115.473692, 35.896917],
                 [115.473692, 35.896917],
                 [115.487242, 35.903702],
-                [115.498329, 35.897401],
-              ],
+                [115.498329, 35.897401]
+              ]
             ],
             [
               [
@@ -6297,8 +6297,8 @@ const map = (element, dispose) => {
                 [121.487107, 37.577884],
                 [121.485875, 37.578359],
                 [121.485875, 37.578833],
-                [121.487723, 37.578833],
-              ],
+                [121.487723, 37.578833]
+              ]
             ],
             [
               [
@@ -6307,27 +6307,27 @@ const map = (element, dispose) => {
                 [121.488339, 37.578833],
                 [121.487723, 37.57741],
                 [121.487723, 37.577884],
-                [121.487723, 37.578833],
-              ],
-            ],
-          ],
-        },
+                [121.487723, 37.578833]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 410000,
-          name: "河南省",
+          name: '河南省',
           center: [113.665412, 34.757975],
           centroid: [113.619918, 33.902738],
           childrenNum: 18,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 15,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -6573,8 +6573,8 @@ const map = (element, dispose) => {
                 [115.83032, 34.562714],
                 [116.101334, 34.605571],
                 [116.134594, 34.559758],
-                [116.196804, 34.576017],
-              ],
+                [116.196804, 34.576017]
+              ]
             ],
             [
               [
@@ -6582,8 +6582,8 @@ const map = (element, dispose) => {
                 [115.487242, 35.903702],
                 [115.503257, 35.91194],
                 [115.503257, 35.91194],
-                [115.498329, 35.897401],
-              ],
+                [115.498329, 35.897401]
+              ]
             ],
             [
               [
@@ -6591,27 +6591,27 @@ const map = (element, dispose) => {
                 [113.758301, 32.296476],
                 [113.757069, 32.29243],
                 [113.761996, 32.268149],
-                [113.749677, 32.272196],
-              ],
-            ],
-          ],
-        },
+                [113.749677, 32.272196]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 420000,
-          name: "湖北省",
+          name: '湖北省',
           center: [114.298572, 30.584355],
           centroid: [112.271042, 30.98802],
           childrenNum: 17,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 16,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -6887,8 +6887,8 @@ const map = (element, dispose) => {
                 [109.352487, 29.284574],
                 [109.258248, 29.21932],
                 [109.274262, 29.122146],
-                [109.232378, 29.119533],
-              ],
+                [109.232378, 29.119533]
+              ]
             ],
             [
               [
@@ -6897,8 +6897,8 @@ const map = (element, dispose) => {
                 [112.926782, 29.763036],
                 [112.939101, 29.768229],
                 [112.937869, 29.783809],
-                [113.020405, 29.772384],
-              ],
+                [113.020405, 29.772384]
+              ]
             ],
             [
               [
@@ -6906,8 +6906,8 @@ const map = (element, dispose) => {
                 [111.056791, 33.192743],
                 [111.031537, 33.17722],
                 [111.037081, 33.187235],
-                [111.032769, 33.209265],
-              ],
+                [111.032769, 33.209265]
+              ]
             ],
             [
               [
@@ -6915,8 +6915,8 @@ const map = (element, dispose) => {
                 [109.09872, 30.579277],
                 [109.100567, 30.580823],
                 [109.106727, 30.572066],
-                [109.106111, 30.57052],
-              ],
+                [109.106111, 30.57052]
+              ]
             ],
             [
               [
@@ -6924,27 +6924,27 @@ const map = (element, dispose) => {
                 [112.730914, 32.363212],
                 [112.729066, 32.366245],
                 [112.733993, 32.363718],
-                [112.732146, 32.362707],
-              ],
-            ],
-          ],
-        },
+                [112.732146, 32.362707]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 430000,
-          name: "湖南省",
+          name: '湖南省',
           center: [112.982279, 28.19409],
           centroid: [111.754313, 27.655081],
           childrenNum: 14,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 17,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -7197,8 +7197,8 @@ const map = (element, dispose) => {
                 [110.165527, 26.023773],
                 [110.065128, 26.051191],
                 [110.099005, 26.16939],
-                [109.965962, 26.195699],
-              ],
+                [109.965962, 26.195699]
+              ]
             ],
             [
               [
@@ -7237,27 +7237,27 @@ const map = (element, dispose) => {
                 [109.730057, 25.989895],
                 [109.635203, 26.047428],
                 [109.513247, 25.997962],
-                [109.48245, 26.029687],
-              ],
-            ],
-          ],
-        },
+                [109.48245, 26.029687]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 440000,
-          name: "广东省",
+          name: '广东省',
           center: [113.280637, 23.125178],
           centroid: [113.429877, 23.334664],
           childrenNum: 22,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 18,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -7532,16 +7532,16 @@ const map = (element, dispose) => {
                 [109.757775, 21.346816],
                 [109.868644, 21.365763],
                 [109.894513, 21.44208],
-                [109.785492, 21.457116],
-              ],
+                [109.785492, 21.457116]
+              ]
             ],
             [
               [
                 [117.100387, 23.401566],
                 [116.946402, 23.421881],
                 [117.129336, 23.483358],
-                [117.100387, 23.401566],
-              ],
+                [117.100387, 23.401566]
+              ]
             ],
             [
               [
@@ -7552,16 +7552,16 @@ const map = (element, dispose) => {
                 [112.782037, 21.665788],
                 [112.70566, 21.679133],
                 [112.831312, 21.77529],
-                [112.853486, 21.74028],
-              ],
+                [112.853486, 21.74028]
+              ]
             ],
             [
               [
                 [112.625588, 21.616847],
                 [112.535045, 21.628527],
                 [112.663776, 21.714157],
-                [112.625588, 21.616847],
-              ],
+                [112.625588, 21.616847]
+              ]
             ],
             [
               [
@@ -7573,8 +7573,8 @@ const map = (element, dispose) => {
                 [110.201251, 20.938324],
                 [110.211106, 20.986933],
                 [110.305961, 21.088012],
-                [110.495054, 21.075171],
-              ],
+                [110.495054, 21.075171]
+              ]
             ],
             [
               [
@@ -7582,8 +7582,8 @@ const map = (element, dispose) => {
                 [110.431612, 21.181211],
                 [110.634256, 21.21022],
                 [110.582517, 21.094711],
-                [110.501829, 21.142711],
-              ],
+                [110.501829, 21.142711]
+              ]
             ],
             [
               [
@@ -7594,8 +7594,8 @@ const map = (element, dispose) => {
                 [116.749302, 20.600979],
                 [116.849084, 20.62842],
                 [116.87249, 20.738134],
-                [116.769628, 20.771704],
-              ],
+                [116.769628, 20.771704]
+              ]
             ],
             [
               [
@@ -7603,8 +7603,8 @@ const map = (element, dispose) => {
                 [110.548641, 20.908703],
                 [110.584365, 20.948941],
                 [110.646575, 20.917087],
-                [110.598532, 20.857273],
-              ],
+                [110.598532, 20.857273]
+              ]
             ],
             [
               [
@@ -7612,27 +7612,27 @@ const map = (element, dispose) => {
                 [116.044051, 21.11034],
                 [116.067457, 21.040552],
                 [115.989233, 21.035526],
-                [115.943037, 21.097502],
-              ],
-            ],
-          ],
-        },
+                [115.943037, 21.097502]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 450000,
-          name: "广西壮族自治区",
+          name: '广西壮族自治区',
           center: [108.320004, 22.82402],
           centroid: [108.794237, 23.833575],
           childrenNum: 14,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 19,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -7902,8 +7902,8 @@ const map = (element, dispose) => {
                 [111.570484, 24.644821],
                 [111.68936, 24.778531],
                 [111.951135, 24.769839],
-                [112.024431, 24.739955],
-              ],
+                [112.024431, 24.739955]
+              ]
             ],
             [
               [
@@ -7911,27 +7911,27 @@ const map = (element, dispose) => {
                 [105.077868, 24.918065],
                 [105.09573, 24.928375],
                 [105.096346, 24.928375],
-                [105.082179, 24.915895],
-              ],
-            ],
-          ],
-        },
+                [105.082179, 24.915895]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 460000,
-          name: "海南省",
+          name: '海南省',
           center: [110.33119, 20.031971],
           centroid: [109.754777, 19.189617],
           childrenNum: 19,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 20,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -7987,8 +7987,8 @@ const map = (element, dispose) => {
                 [109.048829, 19.620007],
                 [109.169553, 19.736628],
                 [109.159082, 19.790684],
-                [109.231147, 19.863293],
-              ],
+                [109.231147, 19.863293]
+              ]
             ],
             [
               [
@@ -8003,40 +8003,40 @@ const map = (element, dispose) => {
                 [114.368696, 7.63869],
                 [114.157429, 7.56159],
                 [113.98743, 7.536085],
-                [113.896887, 7.607259],
-              ],
+                [113.896887, 7.607259]
+              ]
             ],
             [
               [
                 [111.660411, 16.258092],
                 [111.606825, 16.17766],
                 [111.569252, 16.195472],
-                [111.660411, 16.258092],
-              ],
+                [111.660411, 16.258092]
+              ]
             ],
             [
               [
                 [113.976959, 8.872658],
                 [114.060111, 8.816493],
                 [114.037321, 8.781016],
-                [113.976959, 8.872658],
-              ],
+                [113.976959, 8.872658]
+              ]
             ],
             [
               [
                 [112.067547, 16.319543],
                 [111.97454, 16.323563],
                 [112.047221, 16.360309],
-                [112.067547, 16.319543],
-              ],
+                [112.067547, 16.319543]
+              ]
             ],
             [
               [
                 [115.837712, 9.709358],
                 [115.925791, 9.7813],
                 [115.901153, 9.671021],
-                [115.837712, 9.709358],
-              ],
+                [115.837712, 9.709358]
+              ]
             ],
             [
               [
@@ -8049,8 +8049,8 @@ const map = (element, dispose) => {
                 [109.791651, 7.524815],
                 [109.654297, 7.479138],
                 [109.513247, 7.320122],
-                [109.463972, 7.344453],
-              ],
+                [109.463972, 7.344453]
+              ]
             ],
             [
               [
@@ -8058,24 +8058,24 @@ const map = (element, dispose) => {
                 [112.607726, 16.066724],
                 [112.570154, 16.010945],
                 [112.448814, 16.005194],
-                [112.527654, 16.058099],
-              ],
+                [112.527654, 16.058099]
+              ]
             ],
             [
               [
                 [114.469095, 10.83618],
                 [114.587355, 10.90904],
                 [114.565181, 10.836767],
-                [114.469095, 10.83618],
-              ],
+                [114.469095, 10.83618]
+              ]
             ],
             [
               [
                 [112.383524, 16.266134],
                 [112.528886, 16.318395],
                 [112.538741, 16.289107],
-                [112.383524, 16.266134],
-              ],
+                [112.383524, 16.266134]
+              ]
             ],
             [
               [
@@ -8084,8 +8084,8 @@ const map = (element, dispose) => {
                 [116.637817, 10.3651],
                 [116.566368, 10.304472],
                 [116.467202, 10.309182],
-                [116.48876, 10.395704],
-              ],
+                [116.48876, 10.395704]
+              ]
             ],
             [
               [
@@ -8093,8 +8093,8 @@ const map = (element, dispose) => {
                 [115.315395, 8.356213],
                 [115.285214, 8.314772],
                 [115.18112, 8.345557],
-                [115.16757, 8.386402],
-              ],
+                [115.16757, 8.386402]
+              ]
             ],
             [
               [
@@ -8103,16 +8103,16 @@ const map = (element, dispose) => {
                 [110.078063, 7.949317],
                 [110.050346, 7.846195],
                 [109.988136, 7.812408],
-                [109.936397, 7.848566],
-              ],
+                [109.936397, 7.848566]
+              ]
             ],
             [
               [
                 [114.696992, 11.004203],
                 [114.766593, 11.110489],
                 [114.793079, 11.076435],
-                [114.696992, 11.004203],
-              ],
+                [114.696992, 11.004203]
+              ]
             ],
             [
               [
@@ -8120,43 +8120,43 @@ const map = (element, dispose) => {
                 [110.568351, 8.172657],
                 [110.554184, 8.09388],
                 [110.471032, 8.071962],
-                [110.459946, 8.116389],
-              ],
+                [110.459946, 8.116389]
+              ]
             ],
             [
               [
                 [117.266691, 10.691581],
                 [117.369553, 10.742727],
                 [117.404661, 10.671002],
-                [117.266691, 10.691581],
-              ],
+                [117.266691, 10.691581]
+              ]
             ],
             [
               [
                 [113.80696, 19.223319],
                 [113.920293, 19.223319],
                 [113.874097, 19.151553],
-                [113.80696, 19.223319],
-              ],
-            ],
-          ],
-        },
+                [113.80696, 19.223319]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 500000,
-          name: "重庆市",
+          name: '重庆市',
           center: [106.504962, 29.533155],
           centroid: [107.88398, 30.067321],
           childrenNum: 38,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 21,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -8396,8 +8396,8 @@ const map = (element, dispose) => {
                 [109.102415, 30.580308],
                 [109.100567, 30.580823],
                 [109.09872, 30.579277],
-                [109.09256, 30.578762],
-              ],
+                [109.09256, 30.578762]
+              ]
             ],
             [
               [
@@ -8405,8 +8405,8 @@ const map = (element, dispose) => {
                 [105.580474, 30.129577],
                 [105.582938, 30.127507],
                 [105.582938, 30.123884],
-                [105.574315, 30.130611],
-              ],
+                [105.574315, 30.130611]
+              ]
             ],
             [
               [
@@ -8414,8 +8414,8 @@ const map = (element, dispose) => {
                 [109.09872, 30.579277],
                 [109.106111, 30.57052],
                 [109.103647, 30.565883],
-                [109.09256, 30.578762],
-              ],
+                [109.09256, 30.578762]
+              ]
             ],
             [
               [
@@ -8423,8 +8423,8 @@ const map = (element, dispose) => {
                 [109.108575, 30.576702],
                 [109.106727, 30.572066],
                 [109.100567, 30.580823],
-                [109.102415, 30.580308],
-              ],
+                [109.102415, 30.580308]
+              ]
             ],
             [
               [
@@ -8432,27 +8432,27 @@ const map = (element, dispose) => {
                 [107.058113, 30.043118],
                 [107.055649, 30.040528],
                 [107.054417, 30.041046],
-                [107.053801, 30.043636],
-              ],
-            ],
-          ],
-        },
+                [107.053801, 30.043636]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 510000,
-          name: "四川省",
+          name: '四川省',
           center: [104.065735, 30.659462],
           centroid: [102.693438, 30.674548],
           childrenNum: 21,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 22,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -8943,8 +8943,8 @@ const map = (element, dispose) => {
                 [105.881053, 30.387465],
                 [105.792357, 30.427199],
                 [105.714749, 30.322927],
-                [105.720292, 30.252662],
-              ],
+                [105.720292, 30.252662]
+              ]
             ],
             [
               [
@@ -8952,8 +8952,8 @@ const map = (element, dispose) => {
                 [106.256776, 30.19631],
                 [106.260471, 30.204067],
                 [106.261703, 30.205101],
-                [106.262935, 30.211306],
-              ],
+                [106.262935, 30.211306]
+              ]
             ],
             [
               [
@@ -8961,51 +8961,51 @@ const map = (element, dispose) => {
                 [105.56138, 30.183898],
                 [105.558916, 30.18545],
                 [105.56138, 30.188035],
-                [105.571235, 30.17976],
-              ],
+                [105.571235, 30.17976]
+              ]
             ],
             [
               [
                 [106.981736, 30.085062],
                 [106.980504, 30.085062],
                 [106.980504, 30.087651],
-                [106.981736, 30.085062],
-              ],
+                [106.981736, 30.085062]
+              ]
             ],
             [
               [
                 [106.980504, 30.085062],
                 [106.976193, 30.083509],
                 [106.978041, 30.087133],
-                [106.980504, 30.085062],
-              ],
+                [106.980504, 30.085062]
+              ]
             ],
             [
               [
                 [106.976193, 30.083509],
                 [106.974345, 30.082992],
                 [106.976193, 30.087651],
-                [106.976193, 30.083509],
-              ],
-            ],
-          ],
-        },
+                [106.976193, 30.083509]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 520000,
-          name: "贵州省",
+          name: '贵州省',
           center: [106.713478, 26.578343],
           centroid: [106.88108, 26.826362],
           childrenNum: 9,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 23,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -9274,8 +9274,8 @@ const map = (element, dispose) => {
                 [109.481218, 26.838156],
                 [109.473211, 26.828546],
                 [109.504624, 26.805051],
-                [109.52187, 26.748964],
-              ],
+                [109.52187, 26.748964]
+              ]
             ],
             [
               [
@@ -9283,8 +9283,8 @@ const map = (element, dispose) => {
                 [109.528029, 26.744689],
                 [109.548971, 26.737208],
                 [109.548971, 26.737208],
-                [109.529261, 26.740414],
-              ],
+                [109.529261, 26.740414]
+              ]
             ],
             [
               [
@@ -9292,27 +9292,27 @@ const map = (element, dispose) => {
                 [109.504624, 26.805051],
                 [109.473211, 26.828546],
                 [109.481218, 26.838156],
-                [109.500928, 26.828546],
-              ],
-            ],
-          ],
-        },
+                [109.500928, 26.828546]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 530000,
-          name: "云南省",
+          name: '云南省',
           center: [102.712251, 25.040609],
           centroid: [101.485108, 25.008649],
           childrenNum: 16,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 24,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -9753,27 +9753,27 @@ const map = (element, dispose) => {
                 [105.699966, 23.401566],
                 [105.694423, 23.363122],
                 [105.531815, 23.248275],
-                [105.542902, 23.18449],
-              ],
-            ],
-          ],
-        },
+                [105.542902, 23.18449]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 540000,
-          name: "西藏自治区",
+          name: '西藏自治区',
           center: [91.132212, 29.660361],
           centroid: [88.388277, 31.56375],
           childrenNum: 7,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 25,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -10356,27 +10356,27 @@ const map = (element, dispose) => {
                 [78.793273, 34.132445],
                 [78.9257, 34.155719],
                 [78.981751, 34.318458],
-                [79.039649, 34.33427],
-              ],
-            ],
-          ],
-        },
+                [79.039649, 34.33427]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 610000,
-          name: "陕西省",
+          name: '陕西省',
           center: [108.948024, 34.263161],
           centroid: [108.887567, 35.263665],
           childrenNum: 10,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 26,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -10691,8 +10691,8 @@ const map = (element, dispose) => {
                 [107.540393, 36.828736],
                 [107.478183, 36.908674],
                 [107.310032, 36.912501],
-                [107.288474, 37.00812],
-              ],
+                [107.288474, 37.00812]
+              ]
             ],
             [
               [
@@ -10700,8 +10700,8 @@ const map = (element, dispose) => {
                 [106.07261, 32.764103],
                 [106.076921, 32.764103],
                 [106.076305, 32.758065],
-                [106.076305, 32.753537],
-              ],
+                [106.076305, 32.753537]
+              ]
             ],
             [
               [
@@ -10709,26 +10709,26 @@ const map = (element, dispose) => {
                 [111.022914, 33.475181],
                 [111.02661, 33.478675],
                 [111.02661, 33.474183],
-                [111.022914, 33.474682],
-              ],
-            ],
-          ],
-        },
+                [111.022914, 33.474682]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 620000,
-          name: "甘肃省",
+          name: '甘肃省',
           center: [103.823557, 36.058039],
           childrenNum: 14,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 27,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -11292,8 +11292,8 @@ const map = (element, dispose) => {
                 [106.838222, 35.079933],
                 [106.710723, 35.100495],
                 [106.5746, 35.089236],
-                [106.494528, 35.005964],
-              ],
+                [106.494528, 35.005964]
+              ]
             ],
             [
               [
@@ -11304,8 +11304,8 @@ const map = (element, dispose) => {
                 [106.061523, 35.457547],
                 [106.054132, 35.449261],
                 [106.057827, 35.488245],
-                [106.070762, 35.491655],
-              ],
+                [106.070762, 35.491655]
+              ]
             ],
             [
               [
@@ -11316,8 +11316,8 @@ const map = (element, dispose) => {
                 [106.06953, 35.458034],
                 [106.071378, 35.449261],
                 [106.079385, 35.427325],
-                [106.073226, 35.421474],
-              ],
+                [106.073226, 35.421474]
+              ]
             ],
             [
               [
@@ -11325,8 +11325,8 @@ const map = (element, dispose) => {
                 [102.832153, 36.357957],
                 [102.830305, 36.358439],
                 [102.830305, 36.362294],
-                [102.831537, 36.360848],
-              ],
+                [102.831537, 36.360848]
+              ]
             ],
             [
               [
@@ -11334,27 +11334,27 @@ const map = (element, dispose) => {
                 [106.501304, 35.735836],
                 [106.501304, 35.737779],
                 [106.504383, 35.738265],
-                [106.503767, 35.736322],
-              ],
-            ],
-          ],
-        },
+                [106.503767, 35.736322]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 630000,
-          name: "青海省",
+          name: '青海省',
           center: [101.778916, 36.623178],
           centroid: [96.043531, 35.726402],
           childrenNum: 8,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 28,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -11820,27 +11820,27 @@ const map = (element, dispose) => {
                 [91.436044, 33.065974],
                 [91.262349, 33.141156],
                 [91.134849, 33.073495],
-                [91.001807, 33.116102],
-              ],
-            ],
-          ],
-        },
+                [91.001807, 33.116102]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 640000,
-          name: "宁夏回族自治区",
+          name: '宁夏回族自治区',
           center: [106.278179, 38.46637],
           centroid: [106.169867, 37.291331],
           childrenNum: 5,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 29,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -11989,8 +11989,8 @@ const map = (element, dispose) => {
                 [106.071378, 35.449261],
                 [106.073226, 35.450236],
                 [106.073842, 35.45511],
-                [106.06953, 35.458034],
-              ],
+                [106.06953, 35.458034]
+              ]
             ],
             [
               [
@@ -11998,8 +11998,8 @@ const map = (element, dispose) => {
                 [106.054132, 35.449261],
                 [105.894603, 35.413672],
                 [105.897683, 35.451698],
-                [106.057827, 35.488245],
-              ],
+                [106.057827, 35.488245]
+              ]
             ],
             [
               [
@@ -12007,27 +12007,27 @@ const map = (element, dispose) => {
                 [106.06953, 35.458034],
                 [106.073842, 35.45511],
                 [106.073226, 35.450236],
-                [106.071378, 35.449261],
-              ],
-            ],
-          ],
-        },
+                [106.071378, 35.449261]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 650000,
-          name: "新疆维吾尔自治区",
+          name: '新疆维吾尔自治区',
           center: [87.617733, 43.792818],
           centroid: [85.294712, 41.371801],
           childrenNum: 23,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 30,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -12645,27 +12645,27 @@ const map = (element, dispose) => {
                 [79.229358, 34.413778],
                 [79.161605, 34.441416],
                 [79.0107, 34.399956],
-                [79.039649, 34.33427],
-              ],
-            ],
-          ],
-        },
+                [79.039649, 34.33427]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 710000,
-          name: "台湾省",
+          name: '台湾省',
           center: [121.509062, 25.044332],
           centroid: [120.971486, 23.749452],
           childrenNum: 0,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 31,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -12719,8 +12719,8 @@ const map = (element, dispose) => {
                 [120.651277, 22.033426],
                 [120.640806, 22.241259],
                 [120.569973, 22.361938],
-                [120.443706, 22.441042],
-              ],
+                [120.443706, 22.441042]
+              ]
             ],
             [
               [
@@ -12728,8 +12728,8 @@ const map = (element, dispose) => {
                 [119.609108, 23.503661],
                 [119.566608, 23.584842],
                 [119.678093, 23.600195],
-                [119.646064, 23.55084],
-              ],
+                [119.646064, 23.55084]
+              ]
             ],
             [
               [
@@ -12742,8 +12742,8 @@ const map = (element, dispose) => {
                 [123.480287, 25.737388],
                 [123.46612, 25.732537],
                 [123.465504, 25.732537],
-                [123.491374, 25.747089],
-              ],
+                [123.491374, 25.747089]
+              ]
             ],
             [
               [
@@ -12751,8 +12751,8 @@ const map = (element, dispose) => {
                 [123.549272, 25.724991],
                 [123.546192, 25.729303],
                 [123.546192, 25.728764],
-                [123.549272, 25.724991],
-              ],
+                [123.549272, 25.724991]
+              ]
             ],
             [
               [
@@ -12760,8 +12760,8 @@ const map = (element, dispose) => {
                 [123.691554, 25.921572],
                 [123.690938, 25.917267],
                 [123.690938, 25.916729],
-                [123.690322, 25.923187],
-              ],
+                [123.690322, 25.923187]
+              ]
             ],
             [
               [
@@ -12769,16 +12769,16 @@ const map = (element, dispose) => {
                 [123.559743, 25.717984],
                 [123.548656, 25.720679],
                 [123.549272, 25.720679],
-                [123.559743, 25.718523],
-              ],
+                [123.559743, 25.718523]
+              ]
             ],
             [
               [
                 [121.510513, 22.087215],
                 [121.573339, 22.086106],
                 [121.594281, 21.995152],
-                [121.510513, 22.087215],
-              ],
+                [121.510513, 22.087215]
+              ]
             ],
             [
               [
@@ -12786,27 +12786,27 @@ const map = (element, dispose) => {
                 [123.560359, 25.718523],
                 [123.560359, 25.717984],
                 [123.559743, 25.717984],
-                [123.559743, 25.718523],
-              ],
-            ],
-          ],
-        },
+                [123.559743, 25.718523]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 810000,
-          name: "香港特别行政区",
+          name: '香港特别行政区',
           center: [114.173355, 22.320048],
           centroid: [114.134394, 22.377371],
           childrenNum: 18,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 32,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -12840,16 +12840,16 @@ const map = (element, dispose) => {
                 [114.015763, 22.332054],
                 [113.920293, 22.368024],
                 [113.918445, 22.418366],
-                [114.031778, 22.504071],
-              ],
+                [114.031778, 22.504071]
+              ]
             ],
             [
               [
                 [114.350834, 22.260087],
                 [114.355146, 22.268393],
                 [114.355762, 22.268393],
-                [114.350834, 22.260087],
-              ],
+                [114.350834, 22.260087]
+              ]
             ],
             [
               [
@@ -12857,52 +12857,52 @@ const map = (element, dispose) => {
                 [114.320037, 22.381856],
                 [114.319421, 22.382409],
                 [114.323733, 22.384622],
-                [114.320037, 22.381303],
-              ],
+                [114.320037, 22.381303]
+              ]
             ],
             [
               [
                 [114.372392, 22.322645],
                 [114.372392, 22.323752],
                 [114.37424, 22.323199],
-                [114.372392, 22.322645],
-              ],
-            ],
-          ],
-        },
+                [114.372392, 22.322645]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
+        type: 'Feature',
         properties: {
           adcode: 820000,
-          name: "澳门特别行政区",
+          name: '澳门特别行政区',
           center: [113.54909, 22.198951],
           centroid: [113.56642, 22.159262],
           childrenNum: 8,
-          level: "province",
+          level: 'province',
           subFeatureIndex: 33,
           acroutes: [100000],
-          parent: { adcode: 100000 },
+          parent: { adcode: 100000 }
         },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
                 [113.558736, 22.213012],
                 [113.6037, 22.132116],
                 [113.553809, 22.107727],
-                [113.558736, 22.213012],
-              ],
-            ],
-          ],
-        },
+                [113.558736, 22.213012]
+              ]
+            ]
+          ]
+        }
       },
       {
-        type: "Feature",
-        properties: { adcode: 100000, name: "", adchar: "JD" },
+        type: 'Feature',
+        properties: { adcode: 100000, name: '', adchar: 'JD' },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -12928,8 +12928,8 @@ const map = (element, dispose) => {
                 [122.79819583, 24.57983997],
                 [122.79889322, 24.57678999],
                 [122.79861399, 24.57367379],
-                [122.51865306, 23.46078502],
-              ],
+                [122.51865306, 23.46078502]
+              ]
             ],
             [
               [
@@ -12955,8 +12955,8 @@ const map = (element, dispose) => {
                 [121.91169291, 21.69316794],
                 [121.9109946, 21.69011818],
                 [121.90938804, 21.68743347],
-                [121.17202617, 20.8054593],
-              ],
+                [121.17202617, 20.8054593]
+              ]
             ],
             [
               [
@@ -12982,8 +12982,8 @@ const map = (element, dispose) => {
                 [120.02682302, 19.03011484],
                 [120.02674143, 19.02698721],
                 [120.02569734, 19.02403788],
-                [119.47366172, 18.00707291],
-              ],
+                [119.47366172, 18.00707291]
+              ]
             ],
             [
               [
@@ -13012,8 +13012,8 @@ const map = (element, dispose) => {
                 [119.07076587, 16.04976313],
                 [119.07218626, 16.04697545],
                 [119.0726757, 16.04388528],
-                [119.0726757, 15.04098494],
-              ],
+                [119.0726757, 15.04098494]
+              ]
             ],
             [
               [
@@ -13045,8 +13045,8 @@ const map = (element, dispose) => {
                 [118.52385237, 10.909443],
                 [118.52404181, 10.91256595],
                 [118.52518702, 10.91547751],
-                [118.68646749, 11.18959191],
-              ],
+                [118.68646749, 11.18959191]
+              ]
             ],
             [
               [
@@ -13072,8 +13072,8 @@ const map = (element, dispose) => {
                 [116.25283001, 7.9849975],
                 [116.25211077, 7.98195261],
                 [116.2504858, 7.979279],
-                [115.54466883, 7.14672265],
-              ],
+                [115.54466883, 7.14672265]
+              ]
             ],
             [
               [
@@ -13105,8 +13105,8 @@ const map = (element, dispose) => {
                 [111.78159146, 3.41370973],
                 [111.78399583, 3.41571167],
                 [111.78690114, 3.41687263],
-                [112.30705249, 3.53487257],
-              ],
+                [112.30705249, 3.53487257]
+              ]
             ],
             [
               [
@@ -13144,8 +13144,8 @@ const map = (element, dispose) => {
                 [108.29403462, 6.00786957],
                 [108.29170425, 6.00995718],
                 [108.29013305, 6.01266273],
-                [108.26055972, 6.08912451],
-              ],
+                [108.26055972, 6.08912451]
+              ]
             ],
             [
               [
@@ -13189,8 +13189,8 @@ const map = (element, dispose) => {
                 [110.05402458, 11.2473615],
                 [110.05430621, 11.25047749],
                 [110.05553696, 11.25335394],
-                [110.12822847, 11.36894451],
-              ],
+                [110.12822847, 11.36894451]
+              ]
             ],
             [
               [
@@ -13231,19 +13231,19 @@ const map = (element, dispose) => {
                 [109.84828823, 15.14779763],
                 [109.84633168, 15.15023907],
                 [109.84522534, 15.15316562],
-                [109.82951587, 15.22896754],
-              ],
-            ],
-          ],
-        },
-      },
-    ],
-  };
-  
-    echarts.registerMap("china",chinaMap);
-    
- const  option = {
-      legend: {
+                [109.82951587, 15.22896754]
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+
+  echarts.registerMap('china', chinaMap)
+
+  const option = {
+    legend: {
       orient: 'horizontal',
       top: '1%',
       left: '1%',
@@ -13272,271 +13272,270 @@ const map = (element, dispose) => {
       height: '100%',
       width: '100%'
     },
-  geo: {
-    map: "china",
-    aspectScale: 0., // 长宽比
-    zoom: 1.1,
-    roam: false,
-    width:'89%',
-    height:'75%',
-    itemStyle: {
-      normal: {
-        areaColor: {
-          type: "radial",
-          x: 0.5,
-          y: 0.5,
-          r: 0.8,
-          colorStops: [
-            {
-              offset: 0,
-              color: "#09132c", // 0% 处的颜色
-            },
-            {
-              offset: 1,
-              color: "#274d68", // 100% 处的颜色
-            },
-          ],
-          globalCoord: true, // 缺省为 false
-        },
-        shadowColor: "#012764",
-        shadowOffsetX: 10,
-        shadowOffsetY: 11,
-      },
-      emphasis: {
-        areaColor: "#033590",
-        borderWidth: 0,
-        color: "green",
-        label: {
-          show: false,
-        },
-      },
-    },
-  
-  },
-  series: [
-    {
-      type: "map",
+    geo: {
+      map: 'china',
+      aspectScale: 0.0, // 长宽比
+      zoom: 1.1,
       roam: false,
-      width:'85%',
-      height:'75%',
-      label: {
-        normal: {
-          show: true,
-          textStyle: {
-            color: "#edeeef",
-          },
-        },
-        emphasis: {
-          textStyle: {
-            color: "rgb(183,185,14)",
-          },
-        },
-      },
-
+      width: '89%',
+      height: '75%',
       itemStyle: {
         normal: {
-          borderColor: "#00abfb",
-          borderWidth: 1,
           areaColor: {
-            type: "radial",
+            type: 'radial',
             x: 0.5,
             y: 0.5,
             r: 0.8,
             colorStops: [
               {
                 offset: 0,
-                color: "#031e67", // 0% 处的颜色
+                color: '#09132c' // 0% 处的颜色
               },
-             
+              {
+                offset: 1,
+                color: '#274d68' // 100% 处的颜色
+              }
             ],
-            globalCoord: true, // 缺省为 false
+            globalCoord: true // 缺省为 false
           },
+          shadowColor: '#012764',
+          shadowOffsetX: 10,
+          shadowOffsetY: 11
         },
         emphasis: {
-          areaColor: "rgb(46,229,206)",
-          //    shadowColor: 'rgb(12,25,50)',
-          borderWidth: 0.1,
-        },
-      },
-      zoom: 1.1,
-      //     roam: false,
-      map: "china", // 使用
-      // data: this.difficultData //热力图数据   不同区域 不同的底色
-    },
-
-    {
-      type: "lines",
-      zlevel: 2,
-      effect: {
-        show: true,
-        period: 4, // 箭头指向速度，值越小速度越快
-        trailLength: 0.4, // 特效尾迹长度[0,1]值越大，尾迹越长重
-        // symbol: "arrow", // 箭头图标
-        symbolSize: 7, // 图标大小
-      },
-      lineStyle: {
-        normal: {
-          color: "#1DE9B6",
-          width: 2, // 线条宽度
-          opacity: 0.8, // 尾迹线条透明度
-          curveness: 0.4, // 尾迹线条曲直度
-        },
-      },
-      data: [
-        {
-          coords: [
-            [118.8062, 31.9208],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [127.9688, 45.368],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [110.3467, 41.4899],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [125.8154, 44.2584],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [116.4551, 40.2539],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [123.1238, 42.1216],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#214778" },
-        },
-        {
-          coords: [
-            [114.4995, 38.1006],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-     
-        {
-          coords: [
-            [109.1162, 34.2004],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#214778" },
-        },
-        {
-          coords: [
-            [103.9526, 30.7617],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [108.384366, 30.439702],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [113.0823, 28.2568],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-        {
-          coords: [
-            [102.9199, 25.46639],
-            [119.4543, 25.9222],
-          ],
-          lineStyle: { color: "#e6da1b" },
-        },
-      ],
-    },
-    {
-      name: '转出',
-      type: 'lines',
-      zlevel: 2,
-      
-
-      lineStyle: {
-        normal: {
-          color: {
-            type: 'pie',
-            x: 1,
-            y: 0,
-            x2: 0,
-            y2: 1,
-            colorStops: [
-              {
-                offset: 0,
-                color: '#e7db1b' // 0% 处的颜色
-              }
-            ],
-            global: false // 缺省为 false
+          areaColor: '#033590',
+          borderWidth: 0,
+          color: 'green',
+          label: {
+            show: false
           }
-        },
-        emphasis: {
-          width: 3,
-          opacity: 0.5
         }
-      },
-      data: []
+      }
+
     },
-    {
-      name: '转入',
-      type: 'lines',
-      zlevel: 2,
-   
-      lineStyle: {
-        normal: {
-          color: {
-            type: 'linear',
-            x: 0,
-            y: 0,
-            x2: 1,
-            y2: 1,
-
-            colorStops: [
-              {
-                offset: 0,
-                color: '#1be7d4'// 0% 处的颜色
-              }
-
-            ],
-            global: false // 缺省为 false
+    series: [
+      {
+        type: 'map',
+        roam: false,
+        width: '85%',
+        height: '75%',
+        label: {
+          normal: {
+            show: true,
+            textStyle: {
+              color: '#edeeef'
+            }
+          },
+          emphasis: {
+            textStyle: {
+              color: 'rgb(183,185,14)'
+            }
           }
+        },
+
+        itemStyle: {
+          normal: {
+            borderColor: '#00abfb',
+            borderWidth: 1,
+            areaColor: {
+              type: 'radial',
+              x: 0.5,
+              y: 0.5,
+              r: 0.8,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: '#031e67' // 0% 处的颜色
+                }
+
+              ],
+              globalCoord: true // 缺省为 false
+            }
+          },
+          emphasis: {
+            areaColor: 'rgb(46,229,206)',
+            //    shadowColor: 'rgb(12,25,50)',
+            borderWidth: 0.1
+          }
+        },
+        zoom: 1.1,
+        //     roam: false,
+        map: 'china' // 使用
+      // data: this.difficultData //热力图数据   不同区域 不同的底色
+      },
+
+      {
+        type: 'lines',
+        zlevel: 2,
+        effect: {
+          show: true,
+          period: 4, // 箭头指向速度，值越小速度越快
+          trailLength: 0.4, // 特效尾迹长度[0,1]值越大，尾迹越长重
+          // symbol: "arrow", // 箭头图标
+          symbolSize: 7 // 图标大小
+        },
+        lineStyle: {
+          normal: {
+            color: '#1DE9B6',
+            width: 2, // 线条宽度
+            opacity: 0.8, // 尾迹线条透明度
+            curveness: 0.4 // 尾迹线条曲直度
+          }
+        },
+        data: [
+          {
+            coords: [
+              [118.8062, 31.9208],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [127.9688, 45.368],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [110.3467, 41.4899],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [125.8154, 44.2584],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [116.4551, 40.2539],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [123.1238, 42.1216],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#214778' }
+          },
+          {
+            coords: [
+              [114.4995, 38.1006],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+
+          {
+            coords: [
+              [109.1162, 34.2004],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#214778' }
+          },
+          {
+            coords: [
+              [103.9526, 30.7617],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [108.384366, 30.439702],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [113.0823, 28.2568],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          },
+          {
+            coords: [
+              [102.9199, 25.46639],
+              [119.4543, 25.9222]
+            ],
+            lineStyle: { color: '#e6da1b' }
+          }
+        ]
+      },
+      {
+        name: '转出',
+        type: 'lines',
+        zlevel: 2,
+
+        lineStyle: {
+          normal: {
+            color: {
+              type: 'pie',
+              x: 1,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: '#e7db1b' // 0% 处的颜色
+                }
+              ],
+              global: false // 缺省为 false
+            }
+          },
+          emphasis: {
+            width: 3,
+            opacity: 0.5
+          }
+        },
+        data: []
+      },
+      {
+        name: '转入',
+        type: 'lines',
+        zlevel: 2,
+
+        lineStyle: {
+          normal: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 1,
+
+              colorStops: [
+                {
+                  offset: 0,
+                  color: '#1be7d4'// 0% 处的颜色
+                }
+
+              ],
+              global: false // 缺省为 false
+            }
           // width: 1.5, // 线条宽度
           // opacity: 0.2, // 尾迹线条透明度
           // curveness: 0.3 // 尾迹线条曲直度
-        },
-        emphasis: {
-          width: 3,
-          opacity: 0.5
+          },
+          emphasis: {
+            width: 3,
+            opacity: 0.5
+          }
         }
       }
-    }
-  ],
-};
+    ]
+  }
 
-  myChart.setOption(option,true)
+  myChart.setOption(option, true)
 }
 export {
   sex,
