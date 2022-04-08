@@ -1,11 +1,24 @@
 
-import Home from '../views/Home.vue'
+import Analysis from '../views/Analysis.vue'
+import Screen from '../views/Screen.vue'
+import q from '../views/q.vue'
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  }
+    path: '/analysis',
+    name: 'Analysis',
+    component: Analysis
+  },
+ 
+  {
+    path: '/screen',
+    name: 'Screen',
+    component: Screen
+  },
+
+  {
+    path: '*',
+    redirect: '/analysis', // 重定向
+  },
 
 ]
 

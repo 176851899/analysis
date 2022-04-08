@@ -116,9 +116,9 @@
   </div>
 </template>
 <script>
-import HeadItem from '../components/HeadItem.vue'
-import ListItem from '../components/ListItem.vue'
-import ChartContainer from '../components/ChartContainer.vue'
+import HeadItem from '../myComponents/Analysis/HeadItem.vue'
+import ListItem from '../myComponents/Analysis/ListItem.vue'
+import ChartContainer from '../myComponents/Analysis/ChartContainer.vue'
 import axios from 'axios'
 import {
   sex,
@@ -218,10 +218,18 @@ export default {
     sex(this.$refs.sex)
     age(this.$refs.age)
     education(this.$refs.education)
-
     nature(this.$refs.nature)
     nation(this.$refs.nation)
     map(this.$refs.map)
+  },
+  beforeDestroy(){
+      sex(this.$refs.sex,true)
+    age(this.$refs.age,true)
+    education(this.$refs.education,true)
+    nature(this.$refs.nature,true)
+    nation(this.$refs.nation,true)
+    map(this.$refs.map,true)
+      archives(this.$refs.archives,this.mock,true)
   }
   
 }
