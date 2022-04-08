@@ -119,6 +119,7 @@
 import HeadItem from '../components/HeadItem.vue'
 import ListItem from '../components/ListItem.vue'
 import ChartContainer from '../components/ChartContainer.vue'
+import axios from 'axios'
 import {
   sex,
   age,
@@ -143,13 +144,13 @@ export default {
         {
           url: require('../assets/档案接受量.png'),
           title: '档案接受量',
-          amount: '046199',
+          amount: '546699',
           scale: ['-2.56%', '2.56%']
         },
         {
           url: require('../assets/档案转出量.png'),
           title: '档案转出量',
-          amount: '046199',
+          amount: '001199',
           scale: ['-2.56%', '2.56%']
         },
         {
@@ -164,22 +165,22 @@ export default {
         {
           url: require('../assets/1.png'),
           title: '地名',
-          amount: '8.5万人'
+          amount: '8.9万人'
         },
         {
           url: require('../assets/2.png'),
           title: '四川省',
-          amount: '8.5万人'
+          amount: '20万人'
         },
         {
           url: require('../assets/3.png'),
           title: '天津省',
-          amount: '8.5万人'
+          amount: '5万人'
         },
         {
           url: '',
           title: '河南省',
-          amount: '8.5万人'
+          amount: '15万人'
         },
         {
           url: '',
@@ -189,9 +190,11 @@ export default {
         {
           url: '',
           title: '山西省',
-          amount: '8.5万人'
+          amount: '9.5万人'
         }
-      ]
+      ],
+      // mock的数据
+      mock: null,
     }
   },
   components: {
@@ -199,15 +202,28 @@ export default {
     ListItem,
     ChartContainer
   },
+  created(){
+    axios({
+      method:'post',
+      url:'/mock/news'
+    }).then(res => { 
+        this.mock=res.data
+      archives(this.$refs.archives,this.mock)
+       console.log(this.mock,'moke') // 打印一下响应数据
+ }).catch(error =>{
+      console.log(error,'异常')
+ })
+  },
   mounted () {
     sex(this.$refs.sex)
     age(this.$refs.age)
     education(this.$refs.education)
-    archives(this.$refs.archives)
+
     nature(this.$refs.nature)
     nation(this.$refs.nation)
     map(this.$refs.map)
   }
+  
 }
 </script>
 

@@ -613,9 +613,17 @@ const education = (element, dispose) => {
     console.log('销毁99995')
   }
 }
-// 档案分析
-const archives = (element, dispose) => {
+/***
+ *   archives - 档案分析
+ * @param {obj} element - 挂载的对象.
+ * @param {obj} obj    -数据
+ *  @param {boolean} dispose -是否销毁
+ * */
+const archives = (element,obj, dispose) => {
   var myChart = echarts.init(element)
+  console.log(obj,5)
+  const intoData=[...obj.into]
+  const outData=[...obj.out]
   const option = {
 
     tooltip: {
@@ -736,7 +744,7 @@ const archives = (element, dispose) => {
             barBorderRadius: 12
           }
         },
-        data: [1200, 600, 890, 850, 789, 900]
+        data:intoData
       },
       {
         name: '转出量',
@@ -754,12 +762,17 @@ const archives = (element, dispose) => {
             barBorderRadius: 10
           }
         },
-        data: [890, 850, 789, 600, 400, 400]
+        data: outData
       }
 
     ]
   }
   myChart.setOption(option)
+  if (dispose) {
+    myChart.dispose()
+    myChart = null
+    console.log('销毁99995')
+  }
 }
 // 性质分许
 const nature = (element, dispose) => {
