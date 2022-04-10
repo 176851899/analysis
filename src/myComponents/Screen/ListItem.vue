@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .list-item {
   width: calc(100% / 7);
   height: 71px;

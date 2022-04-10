@@ -195,7 +195,7 @@ export default {
     }, 1000)
   },
   watch: {
-    // 动态表格
+    // 动态
     arr: {
       // 处理器
       handler (newVal) {
@@ -218,7 +218,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 * {
   margin: 0;
   padding: 0;

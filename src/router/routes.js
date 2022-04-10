@@ -1,7 +1,9 @@
 
-import Analysis from '../views/Analysis.vue'
-import Screen from '../views/Screen.vue'
-import q from '../views/q.vue'
+// import Analysis from '../views/Analysis.vue'
+// import Screen from '../views/Screen.vue'
+const Analysis = () => import('@/views/Analysis')
+const Screen = () => import('@/views/Screen')
+
 const routes = [
   {
     path: '/analysis',

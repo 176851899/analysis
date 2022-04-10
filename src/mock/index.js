@@ -1,4 +1,3 @@
-// mock.js
 //  模拟数据
 // 引入mockjs
 const Mock = require('mockjs')

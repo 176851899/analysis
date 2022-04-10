@@ -27,12 +27,11 @@ export default {
   },
   data () {
     return {
-
     }
   }
 }
 </script>
-<style lang="scss">
+<style lang="less">
 * {
   padding: 0;
   margin: 0;

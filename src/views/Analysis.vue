@@ -54,7 +54,7 @@
             <p class="title">劳动转移情况</p>
             <div class="btn">
               <span>转入</span>
-              <span>转出</span>
+              <span >转出</span>
             </div>
             <div
               class="map-item"
@@ -235,7 +235,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 * {
   margin: 0;
   padding: 0;
