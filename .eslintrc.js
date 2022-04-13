@@ -17,8 +17,9 @@ module.exports = {
     // 允许定义变量不使用
     'no-unused-vars': 'off',
     // 允许new
+    ' no-tabs':'off',
     'no-new': 'off',
-    'no-undef': 'off',
-    ' no-tabs':'off'
+    'no-undef': 'off'
+    
   }
 }

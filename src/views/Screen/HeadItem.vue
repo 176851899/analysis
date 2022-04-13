@@ -35,6 +35,7 @@ export default {
 
 <style lang="less" scoped>
 header {
+  padding: 0 20px;
   height: 62px;
   width: 100%;
   display: flex;
@@ -54,6 +55,7 @@ header {
     font-weight: normal;
     font-stretch: normal;
     // line-height: 40px;
+    // margin-left: 30px;
     margin-bottom: 10px;
     letter-spacing: 2px;
     color: #fefefe;
@@ -80,6 +82,7 @@ header {
     display: flex;
     align-items: center;
     padding: 10px;
+    margin-left: 30px !important;
     box-sizing: border-box;
     background: url("../../asset/jiao2.png") no-repeat right center;
   }

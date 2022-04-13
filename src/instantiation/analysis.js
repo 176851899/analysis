@@ -4,7 +4,7 @@ import echarts from 'echarts'
  * @param {obj} element - 挂载的对象.
  *  @param {boolean} dispose -是否销毁
  * */
-const sex = (element, dispose) => {
+const sexChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
     label: '男性',
@@ -237,7 +237,7 @@ const sex = (element, dispose) => {
  * @param {obj} element - 挂载的对象.
  *  @param {boolean} dispose -是否销毁
  * */
-const age = (element, dispose) => {
+const ageChart = (element, dispose) => {
   var myChart = echarts.init(element)
   // 人数数据
   const pepole = [1236, 2200, 1000, 5000, 100, 600, 700]
@@ -380,7 +380,7 @@ const age = (element, dispose) => {
   }
 }
 // 教育分布
-const education = (element, dispose) => {
+const educationChart = (element, dispose) => {
   var myChart = echarts.init(element)
   var format = [{ value: 60, name: '硕士及以上', pepole: '2.1万', scale: '21.5%' },
     { value: 40, name: '高中', pepole: '2.1万', scale: '21.5%' },
@@ -511,7 +511,7 @@ const education = (element, dispose) => {
  * @param {obj} obj    -数据
  *  @param {boolean} dispose -是否销毁
  * */
-const archives = (element,obj, dispose) => {
+const archivesChart = (element,obj, dispose) => {
   var myChart = echarts.init(element)
   console.log(obj,5)
   const intoData=[...obj.into]
@@ -667,7 +667,7 @@ const archives = (element,obj, dispose) => {
   }
 }
 // 性质分许
-const nature = (element, dispose) => {
+const natureChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
     label: '个人存档',
@@ -843,7 +843,7 @@ const nature = (element, dispose) => {
   }
 }
 // 民族分许
-const nation = (element, dispose) => {
+const nationChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
     label: '汉族',
@@ -1019,7 +1019,7 @@ const nation = (element, dispose) => {
   }
 }
 // 地图
-const map = (element, dispose) => {
+const mapChart = (element, dispose) => {
   var myChart = echarts.init(element)
   var chinaMap = {
     type: 'FeatureCollection',
@@ -13448,12 +13448,11 @@ const map = (element, dispose) => {
   }
 }
 export {
-  sex,
-  age,
-  education,
-  archives,
-  nature,
-  nation,
-  map
-
+  sexChart,
+  ageChart,
+  educationChart,
+  archivesChart,
+  natureChart,
+  nationChart,
+  mapChart
 }

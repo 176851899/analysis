@@ -19,7 +19,8 @@ const produceNewsData = function () {
   obj.title = '档案转入和转出'
   obj.into = newsList
   obj.out = List
+  obj.code = 200
   return obj
 }
 // 请求该url，就可以返回newsList
-Mock.mock('/mock/news', 'post', produceNewsData) // 后面讲这个api的使用细节
+Mock.mock('/mock/news', 'get', produceNewsData) // 后面讲这个api的使用细节

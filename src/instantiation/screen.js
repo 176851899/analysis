@@ -1,5 +1,5 @@
 import echarts from 'echarts'
-const per = (element,dispose) => {
+const perChart = (element,dispose) => {
   var myChart = echarts.init(element)
   var seriesData = [{
     name: '失业保险',
@@ -226,7 +226,7 @@ const per = (element,dispose) => {
     console.log("销毁99995")
   }
 }
-const rader = (element,dispose) => {
+const raderChart = (element,dispose) => {
   // 基于准备好的dom，初始化echarts实例
   var myChart = echarts.init(element)
   if(dispose){
@@ -489,7 +489,7 @@ const rader = (element,dispose) => {
  * @param {arr} list -数据数组
  *  @param {boolean} dispose -是否销毁
  * */
-const bar = (element, arr, list,dispose) => {
+const barChart = (element, arr, list,dispose) => {
 
   var myChart = echarts.init(element)
     if(dispose){
@@ -769,7 +769,7 @@ const bar = (element, arr, list,dispose) => {
   
   myChart=null
 }
-const axis =  (element,dispose) => {
+const axisChart =  (element,dispose) => {
   // 基于准备好的dom，初始化echarts实例
   var myChart = echarts.init(element)
   if(dispose){
@@ -1048,7 +1048,7 @@ const axis =  (element,dispose) => {
 
   myChart.setOption(option)
 }
-const mix1 =  (element,dispose) => {
+const mix1Chart =  (element,dispose) => {
   // 基于准备好的dom，初始化echarts实例
   var myChart = echarts.init(element)
   if(dispose){
@@ -1446,9 +1446,9 @@ const mix1 =  (element,dispose) => {
   myChart.setOption(option)
 }
 export {
-  per,
-  rader,
-  bar,
-  axis,
-  mix1
+  perChart,
+  raderChart,
+  barChart,
+  axisChart,
+  mix1Chart
 }

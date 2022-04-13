@@ -5,7 +5,6 @@
         <div class="city">新疆维吾尔自治区</div>
       </template>
     </head-item>
-
     <main>
       <!-- 列表 -->
       <section class="nav">
@@ -116,21 +115,26 @@
   </div>
 </template>
 <script>
-import HeadItem from '../myComponents/Analysis/HeadItem.vue'
-import ListItem from '../myComponents/Analysis/ListItem.vue'
-import ChartContainer from '../myComponents/Analysis/ChartContainer.vue'
-import axios from 'axios'
+import HeadItem from './Analysis/HeadItem.vue'
+import ListItem from './Analysis/ListItem.vue'
+import ChartContainer from './Analysis/ChartContainer.vue'
+import {getArchivalData} from '../api/analysis'
 import {
-  sex,
-  age,
-  education,
-  archives,
-  nature,
-  nation,
-  map
-} from '../mock/analysis.js'
+  sexChart,
+  ageChart,
+  educationChart,
+  archivesChart,
+  natureChart,
+  nationChart,
+  mapChart
+} from '../instantiation/analysis.js'
 export default {
   name: 'home',
+   components: {
+    HeadItem,
+    ListItem,
+    ChartContainer
+  },
   data () {
     return {
       // 档案列表
@@ -197,49 +201,41 @@ export default {
       mock: null,
     }
   },
-  components: {
-    HeadItem,
-    ListItem,
-    ChartContainer
-  },
   created(){
-    axios({
-      method:'post',
-      url:'/mock/news'
-    }).then(res => { 
-        this.mock=res.data
-      archives(this.$refs.archives,this.mock)
-       console.log(this.mock,'moke') // 打印一下响应数据
- }).catch(error =>{
+   getArchivalData().then(res => { 
+      // console.log(res)
+      this.mock=res
+      archivesChart(this.$refs.archives,this.mock)
+    
+    }).catch(error =>{
       console.log(error,'异常')
  })
+
   },
   mounted () {
-    sex(this.$refs.sex)
-    age(this.$refs.age)
-    education(this.$refs.education)
-    nature(this.$refs.nature)
-    nation(this.$refs.nation)
-    map(this.$refs.map)
+    // 实列图表
+    sexChart(this.$refs.sex)
+    ageChart(this.$refs.age)
+    educationChart(this.$refs.education)
+    natureChart(this.$refs.nature)
+    nationChart(this.$refs.nation)
+    mapChart(this.$refs.map)
   },
   beforeDestroy(){
-      sex(this.$refs.sex,true)
-    age(this.$refs.age,true)
-    education(this.$refs.education,true)
-    nature(this.$refs.nature,true)
-    nation(this.$refs.nation,true)
-    map(this.$refs.map,true)
-      archives(this.$refs.archives,this.mock,true)
+    // 销毁图表
+    sexChart(this.$refs.sex,true)
+    ageChart(this.$refs.age,true)
+    educationChart(this.$refs.education,true)
+    natureChart(this.$refs.nature,true)
+    nationChart(this.$refs.nation,true)
+    mapChart(this.$refs.map,true)
+    archivesChart(this.$refs.archives,this.mock,true)
   }
   
 }
 </script>
 
 <style lang="less" scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
 .container {
   width: 1920px;
   height: 1080px;

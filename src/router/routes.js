@@ -6,22 +6,31 @@ const Screen = () => import('@/views/Screen')
 
 const routes = [
   {
-    path: '/analysis',
-    name: 'Analysis',
-    component: Analysis
+    path: '/pag',
+      // 嵌套路由
+    component:() => import('@/views/Transition.vue'),
+    children: [
+      {
+        path: '/pag/analysis',
+        name: 'Analysis',
+        component: Analysis
+      },
+     
+      {
+        path: '/pag/screen',
+        name: 'Screen',
+        component: Screen
+      },
+      {
+        path: '/pag',
+        redirect: '/pag/analysis', // 重定向
+      },
+    ]
   },
- 
-  {
-    path: '/screen',
-    name: 'Screen',
-    component: Screen
-  },
-
   {
     path: '*',
-    redirect: '/analysis', // 重定向
+    redirect: '/pag', // 重定向
   },
-
 ]
 
 export default routes

@@ -1,43 +1,31 @@
 <template>
        
-      
-    <screen-adapter style="overflow:hidden;"> 
-       <!-- <div class="Tips">
-        <router-link to="/screen" custom v-slot="{ navigate, isActive }">
+    <div>
+       <div class="Tips">
+        <router-link to="/pag/screen" custom v-slot="{ navigate, isActive }">
             <li @click="navigate" :class="isActive? 'active':''">
                  社保缴费分析
             </li>
         </router-link>
-         <router-link to="/analysis" custom v-slot="{ navigate, isActive }">
+         <router-link to="/pag/analysis" custom v-slot="{ navigate, isActive }">
             <li @click="navigate" :class="isActive? 'active':''">
                  流动人口
             </li>
         </router-link>
          
-       </div> -->
+       </div>
       <router-view> </router-view>
-    </screen-adapter> 
+    </div>
     
 </template>
 <script>
-import ScreenAdapter from './components/screenAdapter.vue'
+
 export default {
-  name: 'App',
-  components: {
-    ScreenAdapter
-  },
-  data () {
-    return {
-    }
-  }
+  name: 'App'
+
 }
 </script>
-<style lang="less">
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+<style lang="less" scoped>
 i {
   font-weight: normal;
   font-style: normal;

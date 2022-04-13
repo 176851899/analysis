@@ -112,7 +112,7 @@
   </div>
 </template>
 <script>
-import { per, rader, bar, axis, mix1 } from '../mock/screen'
+import { perChart, raderChart, barChart, axisChart, mix1Chart } from '../instantiation/screen'
 import img70 from '../asset/01_70.png'
 import img1 from '../asset/01_7.png'
 import img75 from '../asset/01_75.png'
@@ -120,11 +120,16 @@ import img38 from '../asset/01_38.png'
 import img44 from '../asset/01_44.png'
 import img62 from '../asset/01_62.png'
 import img01 from '../asset/01.png'
-import HeadItem from '../myComponents/Screen/HeadItem.vue'
-import ListItem from '../myComponents/Screen/ListItem.vue'
-import ChartItem from '../myComponents/Screen/ChartItem.vue'
+import HeadItem from './Screen/HeadItem.vue'
+import ListItem from './Screen/ListItem.vue'
+import ChartItem from './Screen/ChartItem.vue'
 export default {
   name: 'home',
+   components: {
+    HeadItem,
+    ListItem,
+    ChartItem
+  },
   data () {
     return {
       obj: [
@@ -172,57 +177,48 @@ export default {
         }
       ],
       arr: [220, 182, 191, 234, 290, 330, 310, 400, 500, 300, 200, 188],
-     trimer: null,
+    
       list: [70, 40, 80, 70, 50, 50, 60, 70, 20, 70, 30, 40]
     }
   },
-  components: {
-    HeadItem,
-    ListItem,
-    ChartItem
-  },
-  mounted () {
-    per(this.$refs.per)
-    rader(this.$refs.rader)
-    bar(this.$refs.bar, this.arr, this.list)
-    axis(this.$refs.axis)
-    mix1(this.$refs.mix)
-
-    this. trimer = setInterval(() => {
-      this.arr = this.arr.map((item) => item + 1)
-      this.list = this.list.map((item) => item - 1)
-      // console.log('time')
-    }, 1000)
-  },
-  watch: {
+ watch: {
     // 动态
     arr: {
       // 处理器
       handler (newVal) {
         // console.log(newVal, '55', this.list)
         // console.log('监控成功')
-        bar(this.$refs.bar, newVal, this.list)
+        barChart(this.$refs.bar, newVal, this.list)
       }
       // immediate: true, // 组件实例创建时，立刻调用 handler 处理器
     }
   },
+  mounted () {
+    perChart(this.$refs.per)
+    raderChart(this.$refs.rader)
+    barChart(this.$refs.bar, this.arr, this.list)
+    axisChart(this.$refs.axis)
+    mix1Chart(this.$refs.mix)
+
+    this._trimerID = setInterval(() => {
+      this.arr = this.arr.map((item) => item + 1)
+      this.list = this.list.map((item) => item - 1)
+      // console.log('time')
+    }, 1000)
+  },
   beforeDestroy(){
-     clearInterval(this.trimer)
-    per(this.$refs.per,true)
-    rader(this.$refs.rader,true)
-    bar(this.$refs.bar, this.arr, this.list,true)
-    axis(this.$refs.axis,true)
-    mix1(this.$refs.mix,true)
+    clearInterval(this._trimerID)
+    perChart(this.$refs.per,true)
+    raderChart(this.$refs.rader,true)
+    barChart(this.$refs.bar, this.arr, this.list,true)
+    axisChart(this.$refs.axis,true)
+    mix1Chart(this.$refs.mix,true)
   }
   
 }
 </script>
 
 <style lang="less" scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
 .container {
   width: 1920px;
   height: 1080px;
@@ -459,12 +455,12 @@ export default {
   .rotate {
     width: 300px;
     height: 300px;
-    transform: rotateX(50deg) rotateZ(-180deg);
+    transform: rotateX(50deg) rotateZ(-180deg) ;
     background: url("../asset/底部.png") no-repeat center center;
     background-size: cover;
     position: absolute;
    top: 10px;
-    animation: play 3s infinite linear alternate;
+    animation: play1 3s infinite linear alternate;
     left: 330px;
   
 
