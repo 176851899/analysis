@@ -12,6 +12,7 @@ module.exports = {
       echarts: 'echarts',
     }
     // ...其它配置
+    // ...其它配置
   },
 }
 // 启动仪式
