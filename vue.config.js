@@ -4,7 +4,7 @@ module.exports = {
   //  publicPath: process.env.NODE_ENV === 'production' ? '' : '/', // 部署应用包时的基本 URL
   // nginx部署有子路由时这publicpath为/
   publicPath: process.env.NODE_ENV === 'production' ? '/' : '/', // 部署应用包时的基本 URL
-
+// webpack
   configureWebpack: {
     // 添加cdn引入，
     devtool: false,
