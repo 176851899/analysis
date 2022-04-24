@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+// 是否取用mock
+import  './utils/mockoff' 
 
 Vue.config.productionTip = false
 

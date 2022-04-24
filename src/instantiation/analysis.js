@@ -1,23 +1,23 @@
-import echarts, { dispose } from 'echarts'
+import echarts from 'echarts'
 /***
  *   sex - 展示性别分布
  * @param {obj} element - 挂载的对象.
  *  @param {boolean} dispose -是否销毁
  * */
-const sex = (element, dispose) => {
+const sexPublishChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
-    label: '男性',
-    value: 46356,
-    pepole: '人',
-    num: '20.2%'
-  },
-  {
-    label: '女性',
-    value: 25000,
-    pepole: '人',
-    num: '20.9%'
-  }
+      label: '男性',
+      value: 46356,
+      pepole: '人',
+      num: '20.2%'
+    },
+    {
+      label: '女性',
+      value: 25000,
+      pepole: '人',
+      num: '20.9%'
+    }
   ]
   const man = require('../assets/man.png')
 
@@ -57,8 +57,7 @@ const sex = (element, dispose) => {
   const option = {
     color,
     graphic: {
-      elements: [
-        {
+      elements: [{
           type: 'image',
           z: 3,
           style: {
@@ -87,8 +86,8 @@ const sex = (element, dispose) => {
           z: 3,
           style: {
             image: man
-          // width: 85,
-          // height: 120
+            // width: 85,
+            // height: 120
           },
           left: '45%',
           top: '35%'
@@ -98,8 +97,8 @@ const sex = (element, dispose) => {
           z: 3,
           style: {
             image: woman
-          // width: 85,
-          // height: 120
+            // width: 85,
+            // height: 120
           },
           left: '50%',
           top: '35%'
@@ -172,8 +171,7 @@ const sex = (element, dispose) => {
     toolbox: {
       show: false
     },
-    series: [
-      {
+    series: [{
         name: '',
         type: 'pie',
         clockWise: false,
@@ -211,8 +209,7 @@ const sex = (element, dispose) => {
           // length: 6,
           // length2: 15
         },
-        data: [
-          {
+        data: [{
             name: '张三',
             value: '300'
           },
@@ -226,13 +223,18 @@ const sex = (element, dispose) => {
 
   }
   myChart.setOption(option)
+  if (dispose) {
+    myChart.dispose()
+    myChart = null
+    // console.log("销毁99995")
+  }
 }
 /***
  *   age - 展示年龄
  * @param {obj} element - 挂载的对象.
  *  @param {boolean} dispose -是否销毁
  * */
-const age = (element, dispose) => {
+const agePublishChart = (element, dispose) => {
   var myChart = echarts.init(element)
   // 人数数据
   const pepole = [1236, 2200, 1000, 5000, 100, 600, 700]
@@ -270,70 +272,69 @@ const age = (element, dispose) => {
       type: 'value'
     },
     yAxis: [{
-      type: 'category',
-      inverse: true,
-      axisLabel: {
-        show: true,
-        textStyle: {
-          color: '#58b5f5'
-        }
-      },
-      splitLine: {
-        show: false
-      },
-      axisTick: {
-        show: false
-      },
-      axisLine: {
-        show: false
-      },
-      data: ['60岁以上', '50~59', '40~49', '30~39', '20~29', '20岁以下']
-    },
-    {
-      type: 'category',
-      inverse: true,
-      axisTick: 'none',
-      axisLine: 'none',
-      show: true,
-      axisLabel: {
-        textStyle: {
-          color: '#dfe0e1',
-          fontSize: '12',
-          rich: {
-            va: {
-              color: 'red',
-              fontSize: 16,
-              lineHeight: 15,
-              height: 20,
-              align: 'left'
-
-            },
-            rate: {
-              color: '#f88d2d',
-              fontSize: 14,
-              lineHeight: 10,
-
-              align: 'left'
-            }
-
+        type: 'category',
+        inverse: true,
+        axisLabel: {
+          show: true,
+          textStyle: {
+            color: '#58b5f5'
           }
         },
-        formatter: function (value) {
-          if (scaleLIst.length) {
-            const item = '12%'
-            if (value >= 10000) {
-              return (value / 10000).toLocaleString() + '万' + item
-            } else {
-              return `${value.toLocaleString()}   ${item}`
+        splitLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        axisLine: {
+          show: false
+        },
+        data: ['60岁以上', '50~59', '40~49', '30~39', '20~29', '20岁以下']
+      },
+      {
+        type: 'category',
+        inverse: true,
+        axisTick: 'none',
+        axisLine: 'none',
+        show: true,
+        axisLabel: {
+          textStyle: {
+            color: '#dfe0e1',
+            fontSize: '12',
+            rich: {
+              va: {
+                color: 'red',
+                fontSize: 16,
+                lineHeight: 15,
+                height: 20,
+                align: 'left'
+
+              },
+              rate: {
+                color: '#f88d2d',
+                fontSize: 14,
+                lineHeight: 10,
+
+                align: 'left'
+              }
+
+            }
+          },
+          formatter: function (value) {
+            if (scaleLIst.length) {
+              const item = '12%'
+              if (value >= 10000) {
+                return (value / 10000).toLocaleString() + '万' + item
+              } else {
+                return `${value.toLocaleString()}   ${item}`
+              }
             }
           }
-        }
-      },
-      data: pepole
-    }
+        },
+        data: pepole
+      }
     ],
-    series: [
-      {
+    series: [{
         name: '金额',
         type: 'bar',
         zlevel: 1,
@@ -341,9 +342,9 @@ const age = (element, dispose) => {
           normal: {
             barBorder: 8,
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-              offset: 0,
-              color: 'rgb(57,89,255,1)'
-            }
+                offset: 0,
+                color: 'rgb(57,89,255,1)'
+              }
 
             ])
           }
@@ -367,134 +368,47 @@ const age = (element, dispose) => {
       }
     ]
   }
-  const option1 = {
-    grid: {
-      left: '5%',
-      right: '5%',
-      bottom: '5%',
-      top: '10%',
-      containLabel: true
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'none'
-      },
-      formatter: function (params) {
-        return (
-          params[0].name +
-          '<br/>' +
-          "<span style='display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgba(36,207,233,0.9)'></span>" +
-          params[0].seriesName +
-          ' : ' +
-          Number(
-            (params[0].value.toFixed(4) / 10000).toFixed(2)
-          ).toLocaleString() +
-          ' 万元<br/>'
-        )
-      }
-    },
-    backgroundColor: '',
-    xAxis: {
-      show: false,
-      type: 'value'
-    },
-    yAxis: [
-      {
-        type: 'category',
-        inverse: true,
-        axisLabel: {
-          show: true,
-          textStyle: {
-            color: '#fff'
-          }
-        },
-        splitLine: {
-          show: false
-        },
-        axisTick: {
-          show: false
-        },
-        axisLine: {
-          show: false
-        },
-        data: ['60岁以上', '50~59', '40~49', '30~39', '20~29', '20岁以下']
-      },
-      {
-        type: 'category',
-        inverse: true,
-        axisTick: 'none',
-        axisLine: 'none',
-        show: true,
-        axisLabel: {
-          textStyle: {
-            color: '#ffffff',
-            fontSize: '12'
-          },
-          formatter: function (value) {
-            if (value >= 10000) {
-              return (value / 10000).toLocaleString() + '万'
-            } else {
-              return value.toLocaleString()
-            }
-          }
-        },
-        data: pepole
-      }
-    ],
-    series: [
-      {
-        name: '金额',
-        type: 'bar',
-        zlevel: 1,
-        itemStyle: {
-          normal: {
-            barBorderRadius: 8,
-            color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-              {
-                offset: 0,
-                color: 'rgb(57,89,255,1)'
-              },
-              {
-                offset: 1,
-                color: 'rgb(46,200,207,1)'
-              }
-            ])
-          }
-        },
-        barWidth: 20,
-        data: pepole
-      },
-      {
-        name: '背景',
-        type: 'bar',
-        barWidth: 20,
-        barGap: '-100%',
-        data: [5000, 5000, 5000, 4000, 9000],
-        itemStyle: {
-          normal: {
-            color: 'rgba(24,31,68,1)',
-            barBorderRadius: 30
-          }
-        }
-      }
-    ]
-  }
   myChart.setOption(option)
   if (dispose) {
     myChart.dispose()
     myChart = null
-    console.log('销毁99995')
+    // console.log('销毁a')
   }
 }
 // 教育分布
-const education = (element, dispose) => {
+const educationPublishChart1= (element, dispose) => {
   var myChart = echarts.init(element)
-  var format = [{ value: 60, name: '硕士及以上', pepole: '2.1万', scale: '21.5%' },
-    { value: 40, name: '高中', pepole: '2.1万', scale: '21.5%' },
-    { value: 20, name: '专科', pepole: '2.1万', scale: '21.5%' },
-    { value: 80, name: '本科', pepole: '2.1万', scale: '21.5%' },
-    { value: 100, name: '中专及以下', pepole: '2.1万', scale: '21.5%' }]
+  var format = [{
+      value: 60,
+      name: '硕士及以上',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 40,
+      name: '高中',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 20,
+      name: '专科',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 80,
+      name: '本科',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 100,
+      name: '中专及以下',
+      pepole: '2.1万',
+      scale: '21.5%'
+    }
+  ]
   const option = {
     color: ['#37A2DA', '#3de6e3', '#35a9c3', '#378acc', '#2f54ac'],
     tooltip: {
@@ -505,8 +419,7 @@ const education = (element, dispose) => {
       // }
     },
 
-    series: [
-      {
+    series: [{
         name: '预期',
         type: 'funnel',
         left: '100',
@@ -550,13 +463,31 @@ const education = (element, dispose) => {
             type: 'solid'
           }
         },
-        data:
-          [{ value: 60, name: '硕士及以上' },
-            { value: 40, name: '高中' },
-            { value: 20, name: '专科' },
-            { value: 80, name: '本科' },
-            { value: 100, name: '中专及以下' },
-            { value: 100, name: '中专及以下' }]
+        data: [{
+            value: 60,
+            name: '硕士及以上'
+          },
+          {
+            value: 40,
+            name: '高中'
+          },
+          {
+            value: 20,
+            name: '专科'
+          },
+          {
+            value: 80,
+            name: '本科'
+          },
+          {
+            value: 100,
+            name: '中专及以下'
+          },
+          {
+            value: 100,
+            name: '中专及以下'
+          }
+        ]
       },
       {
         name: '实际',
@@ -594,13 +525,30 @@ const education = (element, dispose) => {
             borderWidth: 2
           }
         },
-        data: [
-          { value: 0, name: '20M以下' },
-          { value: 0, name: '20M-40M' },
-          { value: 0, name: '50M-99M' },
-          { value: 0, name: '100M-499M' },
-          { value: 0, name: '500M-999M8520' },
-          { value: 120, name: '1000M以上' }
+        data: [{
+            value: 0,
+            name: '20M以下'
+          },
+          {
+            value: 0,
+            name: '20M-40M'
+          },
+          {
+            value: 0,
+            name: '50M-99M'
+          },
+          {
+            value: 0,
+            name: '100M-499M'
+          },
+          {
+            value: 0,
+            name: '500M-999M8520'
+          },
+          {
+            value: 120,
+            name: '1000M以上'
+          }
         ]
       }
     ]
@@ -610,12 +558,215 @@ const education = (element, dispose) => {
   if (dispose) {
     myChart.dispose()
     myChart = null
-    console.log('销毁99995')
+    // console.log('销毁99995')
   }
 }
-// 档案分析
-const archives = (element, dispose) => {
+const educationPublishChart = (element, dispose) => {
   var myChart = echarts.init(element)
+  var format = [{
+      value: 60,
+      name: '硕士及以上',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 40,
+      name: '高中',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 20,
+      name: '专科',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 80,
+      name: '本科',
+      pepole: '2.1万',
+      scale: '21.5%'
+    },
+    {
+      value: 100,
+      name: '中专及以下',
+      pepole: '2.1万',
+      scale: '21.5%'
+    }
+  ]
+  const option = {
+    color: ['#37A2DA', '#3de6e3', '#35a9c3', '#378acc', '#2f54ac'],
+    tooltip: {
+      show: false,
+      trigger: 'item'
+      // formatter: function (params) {
+      //   '<br/>{b} : {c}%'
+      // }
+    },
+
+    series: [{
+        name: '',
+        type: 'funnel',
+        left: '63',
+        top:'25',
+        right: 200,
+        width: '57%',
+        height: '80%',
+        sort: 'ascending',
+        gap: 3,
+        // label: {
+        //   normal: {
+        //     formatter: "{b}",
+        //     fontSize: 13,
+        //   },
+        //   emphasis: {
+        //     position: "inside",
+        //     formatter: "{b}: {c}",
+        //   },
+        // },
+        label: {
+          show: true,
+          formatter: function (item) {
+            // console.log(item)
+            const res = format.find(it => it.name === item.name)
+            const i = `{a|${res.name}}\n{b|${res.pepole}}  {c|${res.scale}}`
+            return i
+          },
+          rich: {
+            a: {
+              color: '#5cbcff',
+              fontSize: 14
+            },
+            b: {
+              color: 'rgba(101,166,196,1)',
+              fontSize: 12
+            },
+            c: {
+              color: '#fff',
+              fontSize: 12
+            }
+
+          }
+        },
+        labelLine: {
+          length: 35,
+          lineStyle: {
+            width: 1,
+            type: 'solid'
+          }
+        },
+        itemStyle: {
+          normal: {
+            opacity: 0.8,
+            borderColor: "rgba(9,20,36,0)",
+          },
+        },
+        data: [{
+            value: 60,
+            name: '硕士及以上'
+          },
+          {
+            value: 40,
+            name: '高中'
+          },
+          {
+            value: 20,
+            name: '专科'
+          },
+          {
+            value: 80,
+            name: '本科'
+          },
+          {
+            value: 100,
+            name: '中专及以下'
+          },
+          
+        ]
+      },
+      {
+        name: '',
+        type: 'funnel',
+        left: '100',
+        top:'25',
+        right: 'center',
+        bottom: 0,
+        width: '43%',
+        height: '80%',
+        maxSize: '100%',
+        sort: 'ascending',
+        gap: 3,
+        label: {
+          normal: {
+            show: false,
+            position: "inside",
+            formatter: "{c}",
+            textStyle: {
+              color: "#fff",
+            },
+          },
+          emphasis: {
+            position: "inside",
+            formatter: "{b}: {c}",
+          },
+        },
+        itemStyle: {
+          normal: {
+            opacity: 1,
+            borderColor: "rgba(9,20,36,0)",
+            borderWidth: 0,
+            shadowBlur: 5,
+            shadowOffsetX: 5,
+            shadowOffsetY: 0,
+            shadowColor: "rgba(0, 0, 0, 1)",
+          },
+        },
+
+        data:  [
+          {
+          value: 60,
+          name: '硕士及以上'
+        },
+        {
+          value: 40,
+          name: '高中'
+        },
+        {
+          value: 20,
+          name: '专科'
+        },
+        {
+          value: 80,
+          name: '本科'
+        },
+        {
+          value: 100,
+          name: '中专及以下'
+        },
+       
+        ],
+      },
+    ]
+  }
+
+  myChart.setOption(option)
+  if (dispose) {
+    myChart.dispose()
+    myChart = null
+    // console.log('销毁99995')
+  }
+}
+/***
+ *   archives - 档案分析
+ * @param {obj} element - 挂载的对象.
+ * @param {obj} obj    -数据
+ *  @param {boolean} dispose -是否销毁
+ * */
+const archivesAnalysisChart = (element, obj, dispose) => {
+  var myChart = echarts.init(element)
+  // console.log(obj,5)
+  const intoData = [...obj.into]
+  const outData = [...obj.out]
   const option = {
 
     tooltip: {
@@ -667,8 +818,7 @@ const archives = (element, dispose) => {
         }
       }
     },
-    yAxis: [
-      {
+    yAxis: [{
         type: 'value',
         name: '单位： (万次)',
         nameTextStyle: {
@@ -720,23 +870,20 @@ const archives = (element, dispose) => {
         }
       }
     ],
-    series: [
-      {
+    series: [{
         name: '接收量',
         type: 'bar',
         barWidth: '10%',
         itemStyle: {
           normal: {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                offset: 0,
-                color: '#27bffd'
-              }
-            ]),
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              offset: 0,
+              color: '#27bffd'
+            }]),
             barBorderRadius: 12
           }
         },
-        data: [1200, 600, 890, 850, 789, 900]
+        data: intoData
       },
       {
         name: '转出量',
@@ -744,8 +891,7 @@ const archives = (element, dispose) => {
         barWidth: '10%',
         itemStyle: {
           normal: {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
                 color: '#faec27'
               }
@@ -754,28 +900,33 @@ const archives = (element, dispose) => {
             barBorderRadius: 10
           }
         },
-        data: [890, 850, 789, 600, 400, 400]
+        data: outData
       }
 
     ]
   }
   myChart.setOption(option)
+  if (dispose) {
+    myChart.dispose()
+    myChart = null
+    // console.log('销毁99995')
+  }
 }
 // 性质分许
-const nature = (element, dispose) => {
+const natureChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
-    label: '个人存档',
-    value: 370,
-    pepole: '人',
-    num: '20.2%'
-  },
-  {
-    label: '企业存档',
-    value: 263,
-    pepole: '人',
-    num: '20.9%'
-  }
+      label: '个人存档',
+      value: 370,
+      pepole: '人',
+      num: '20.2%'
+    },
+    {
+      label: '企业存档',
+      value: 263,
+      pepole: '人',
+      num: '20.9%'
+    }
   ]
   const price = require('../assets/存档性质分析.png')
 
@@ -813,8 +964,7 @@ const nature = (element, dispose) => {
   const option = {
     color,
     graphic: {
-      elements: [
-        {
+      elements: [{
           type: 'image',
           z: 3,
           style: {
@@ -831,8 +981,8 @@ const nature = (element, dispose) => {
           z: 3,
           style: {
             image: price
-          // width: 85,
-          // height: 120
+            // width: 85,
+            // height: 120
           },
           left: '46%',
           top: '38%'
@@ -934,24 +1084,24 @@ const nature = (element, dispose) => {
   if (dispose) {
     myChart.dispose()
     myChart = null
-    console.log('销毁99995')
+    // console.log('销毁99995')
   }
 }
 // 民族分许
-const nation = (element, dispose) => {
+const nationChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
-    label: '汉族',
-    value: 370,
-    pepole: '人',
-    num: '20.2%'
-  },
-  {
-    label: '少数民族',
-    value: 263,
-    pepole: '人',
-    num: '20.9%'
-  }
+      label: '汉族',
+      value: 370,
+      pepole: '人',
+      num: '20.2%'
+    },
+    {
+      label: '少数民族',
+      value: 263,
+      pepole: '人',
+      num: '20.9%'
+    }
   ]
   const price = require('../assets/存档民族分析.png')
 
@@ -989,8 +1139,7 @@ const nation = (element, dispose) => {
   const option = {
     color,
     graphic: {
-      elements: [
-        {
+      elements: [{
           type: 'image',
           z: 3,
           style: {
@@ -1007,8 +1156,8 @@ const nation = (element, dispose) => {
           z: 3,
           style: {
             image: price
-          // width: 85,
-          // height: 120
+            // width: 85,
+            // height: 120
           },
           left: '46%',
           top: '38%'
@@ -1110,16 +1259,15 @@ const nation = (element, dispose) => {
   if (dispose) {
     myChart.dispose()
     myChart = null
-    console.log('销毁99995')
+    // console.log('销毁99995')
   }
 }
-// 地图
-const map = (element, dispose) => {
+// 劳动转移
+const laborTransferChart = (element, dispose) => {
   var myChart = echarts.init(element)
   var chinaMap = {
     type: 'FeatureCollection',
-    features: [
-      {
+    features: [{
         type: 'Feature',
         properties: {
           adcode: 110000,
@@ -1130,7 +1278,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 0,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -1281,7 +1431,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 1,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -1414,7 +1566,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 2,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -1963,7 +2117,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 3,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -2177,7 +2333,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 4,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -3179,7 +3337,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 5,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -3504,7 +3664,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 6,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -3902,7 +4064,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 7,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -4527,7 +4691,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 8,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -4620,7 +4786,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 9,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -4843,7 +5011,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 10,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -5153,7 +5323,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 11,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -5471,7 +5643,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 12,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -5751,7 +5925,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 13,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -5998,7 +6174,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 14,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -6324,7 +6502,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 15,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -6608,7 +6788,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 16,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -6941,7 +7123,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 17,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -7254,7 +7438,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 18,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -7629,7 +7815,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 19,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -7928,7 +8116,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 20,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -8153,7 +8343,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 21,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -8449,7 +8641,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 22,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -9002,7 +9196,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 23,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -9309,7 +9505,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 24,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -9770,7 +9968,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 25,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -10373,7 +10573,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 26,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -10725,7 +10927,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 27,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -11351,7 +11555,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 28,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -11837,7 +12043,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 29,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -12024,7 +12232,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 30,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -12662,7 +12872,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 31,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -12803,7 +13015,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 32,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -12882,7 +13096,9 @@ const map = (element, dispose) => {
           level: 'province',
           subFeatureIndex: 33,
           acroutes: [100000],
-          parent: { adcode: 100000 }
+          parent: {
+            adcode: 100000
+          }
         },
         geometry: {
           type: 'MultiPolygon',
@@ -12900,7 +13116,11 @@ const map = (element, dispose) => {
       },
       {
         type: 'Feature',
-        properties: { adcode: 100000, name: '', adchar: 'JD' },
+        properties: {
+          adcode: 100000,
+          name: '',
+          adchar: 'JD'
+        },
         geometry: {
           type: 'MultiPolygon',
           coordinates: [
@@ -13247,8 +13467,7 @@ const map = (element, dispose) => {
       orient: 'horizontal',
       top: '1%',
       left: '1%',
-      data: [
-        {
+      data: [{
           name: '转入'
 
         },
@@ -13286,8 +13505,7 @@ const map = (element, dispose) => {
             x: 0.5,
             y: 0.5,
             r: 0.8,
-            colorStops: [
-              {
+            colorStops: [{
                 offset: 0,
                 color: '#09132c' // 0% 处的颜色
               },
@@ -13313,8 +13531,7 @@ const map = (element, dispose) => {
       }
 
     },
-    series: [
-      {
+    series: [{
         type: 'map',
         roam: false,
         width: '85%',
@@ -13342,8 +13559,7 @@ const map = (element, dispose) => {
               x: 0.5,
               y: 0.5,
               r: 0.8,
-              colorStops: [
-                {
+              colorStops: [{
                   offset: 0,
                   color: '#031e67' // 0% 处的颜色
                 }
@@ -13361,7 +13577,7 @@ const map = (element, dispose) => {
         zoom: 1.1,
         //     roam: false,
         map: 'china' // 使用
-      // data: this.difficultData //热力图数据   不同区域 不同的底色
+        // data: this.difficultData //热力图数据   不同区域 不同的底色
       },
 
       {
@@ -13382,55 +13598,68 @@ const map = (element, dispose) => {
             curveness: 0.4 // 尾迹线条曲直度
           }
         },
-        data: [
-          {
+        data: [{
             coords: [
               [118.8062, 31.9208],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [127.9688, 45.368],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [110.3467, 41.4899],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [125.8154, 44.2584],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [116.4551, 40.2539],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [123.1238, 42.1216],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#214778' }
+            lineStyle: {
+              color: '#214778'
+            }
           },
           {
             coords: [
               [114.4995, 38.1006],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
 
           {
@@ -13438,35 +13667,45 @@ const map = (element, dispose) => {
               [109.1162, 34.2004],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#214778' }
+            lineStyle: {
+              color: '#214778'
+            }
           },
           {
             coords: [
               [103.9526, 30.7617],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [108.384366, 30.439702],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [113.0823, 28.2568],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           },
           {
             coords: [
               [102.9199, 25.46639],
               [119.4543, 25.9222]
             ],
-            lineStyle: { color: '#e6da1b' }
+            lineStyle: {
+              color: '#e6da1b'
+            }
           }
         ]
       },
@@ -13483,12 +13722,10 @@ const map = (element, dispose) => {
               y: 0,
               x2: 0,
               y2: 1,
-              colorStops: [
-                {
-                  offset: 0,
-                  color: '#e7db1b' // 0% 处的颜色
-                }
-              ],
+              colorStops: [{
+                offset: 0,
+                color: '#e7db1b' // 0% 处的颜色
+              }],
               global: false // 缺省为 false
             }
           },
@@ -13513,18 +13750,17 @@ const map = (element, dispose) => {
               x2: 1,
               y2: 1,
 
-              colorStops: [
-                {
+              colorStops: [{
                   offset: 0,
-                  color: '#1be7d4'// 0% 处的颜色
+                  color: '#1be7d4' // 0% 处的颜色
                 }
 
               ],
               global: false // 缺省为 false
             }
-          // width: 1.5, // 线条宽度
-          // opacity: 0.2, // 尾迹线条透明度
-          // curveness: 0.3 // 尾迹线条曲直度
+            // width: 1.5, // 线条宽度
+            // opacity: 0.2, // 尾迹线条透明度
+            // curveness: 0.3 // 尾迹线条曲直度
           },
           emphasis: {
             width: 3,
@@ -13536,14 +13772,18 @@ const map = (element, dispose) => {
   }
 
   myChart.setOption(option, true)
+  if (dispose) {
+    myChart.dispose()
+    myChart = null
+    // console.log("销毁a")
+  }
 }
 export {
-  sex,
-  age,
-  education,
-  archives,
-  nature,
-  nation,
-  map
-
+  sexPublishChart,
+  agePublishChart,
+  educationPublishChart,
+  archivesAnalysisChart,
+  natureChart,
+  nationChart,
+  laborTransferChart
 }

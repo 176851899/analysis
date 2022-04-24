@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .list-item {
   display: flex;
   width: 447px;
@@ -48,7 +48,7 @@ export default {
     linear-gradient(#000307, #000307);
   background-blend-mode: normal, normal;
   border-radius: 4px;
-  background: url("../assets/框.png") no-repeat center center;
+  background: url("../../assets/框.png") no-repeat center center;
   .images {
     width: 70px;
     height: 100%;

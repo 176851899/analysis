@@ -5,7 +5,6 @@
         <div class="city">新疆维吾尔自治区</div>
       </template>
     </head-item>
-
     <main>
       <!-- 列表 -->
       <section class="nav">
@@ -43,7 +42,7 @@
             <template #item>
               <div
                 class="education"
-                style="width: 540px; height: 220px;margin-top:-20px;"
+                style="width: 540px; height: 220px;margin-top:10px;"
                 ref="education"
               ></div>
             </template>
@@ -54,7 +53,7 @@
             <p class="title">劳动转移情况</p>
             <div class="btn">
               <span>转入</span>
-              <span>转出</span>
+              <span >转出</span>
             </div>
             <div
               class="map-item"
@@ -116,20 +115,26 @@
   </div>
 </template>
 <script>
-import HeadItem from '../components/HeadItem.vue'
-import ListItem from '../components/ListItem.vue'
-import ChartContainer from '../components/ChartContainer.vue'
+import HeadItem from './Analysis/HeadItem.vue'
+import ListItem from './Analysis/ListItem.vue'
+import ChartContainer from './Analysis/ChartContainer.vue'
+import {getArchivalData} from '../api/analysis'
 import {
-  sex,
-  age,
-  education,
-  archives,
-  nature,
-  nation,
-  map
-} from '../mock/analysis.js'
+  sexPublishChart,
+  agePublishChart,
+  educationPublishChart,
+  archivesAnalysisChart,
+  natureChart,
+  nationChart,
+  laborTransferChart
+} from '../instantiation/analysis.js'
 export default {
   name: 'home',
+   components: {
+    HeadItem,
+    ListItem,
+    ChartContainer
+  },
   data () {
     return {
       // 档案列表
@@ -138,19 +143,19 @@ export default {
           url: require('../assets/档案总存档.png'),
           title: '档案总存档',
           amount: '046199',
-          scale: ['-2.56%', '2.56%']
+          scale: ['-2.56%', '1.56%']
         },
         {
           url: require('../assets/档案接受量.png'),
           title: '档案接受量',
-          amount: '046199',
-          scale: ['-2.56%', '2.56%']
+          amount: '546699',
+          scale: ['-2.56%', '3.56%']
         },
         {
           url: require('../assets/档案转出量.png'),
           title: '档案转出量',
-          amount: '046199',
-          scale: ['-2.56%', '2.56%']
+          amount: '001199',
+          scale: ['-2.56%', '0.56%']
         },
         {
           url: require('../assets/档案借阅量.png'),
@@ -164,22 +169,22 @@ export default {
         {
           url: require('../assets/1.png'),
           title: '地名',
-          amount: '8.5万人'
+          amount: '8.9万人'
         },
         {
           url: require('../assets/2.png'),
           title: '四川省',
-          amount: '8.5万人'
+          amount: '20万人'
         },
         {
           url: require('../assets/3.png'),
           title: '天津省',
-          amount: '8.5万人'
+          amount: '5万人'
         },
         {
           url: '',
           title: '河南省',
-          amount: '8.5万人'
+          amount: '15万人'
         },
         {
           url: '',
@@ -189,33 +194,48 @@ export default {
         {
           url: '',
           title: '山西省',
-          amount: '8.5万人'
+          amount: '9.5万人'
         }
-      ]
+      ],
+      // mock的数据
+      mock: null,
     }
   },
-  components: {
-    HeadItem,
-    ListItem,
-    ChartContainer
+  created(){
+   getArchivalData()
+    .then(res => { 
+      // console.log(res)
+      this.mock=res
+      archivesAnalysisChart(this.$refs.archives,this.mock)
+    })
+    .catch(error =>{
+      console.log(error,'异常')
+  })
   },
   mounted () {
-    sex(this.$refs.sex)
-    age(this.$refs.age)
-    education(this.$refs.education)
-    archives(this.$refs.archives)
-    nature(this.$refs.nature)
-    nation(this.$refs.nation)
-    map(this.$refs.map)
+    // 创建实列图表
+    sexPublishChart(this.$refs.sex)
+    agePublishChart(this.$refs.age)
+    educationPublishChart(this.$refs.education)
+    natureChart(this.$refs.nature)
+    nationChart(this.$refs.nation)
+    laborTransferChart(this.$refs.map)
+  },
+  beforeDestroy(){
+    // 销毁图表实列
+   sexPublishChart(this.$refs.sex,true)
+   agePublishChart(this.$refs.age,true)
+   educationPublishChart(this.$refs.education,true)
+   natureChart(this.$refs.nature,true)
+   nationChart(this.$refs.nation,true)
+   laborTransferChart(this.$refs.map,true)
+   archivesAnalysisChart(this.$refs.archives,this.mock,true)
   }
+  
 }
 </script>
 
-<style lang="scss" scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
+<style lang="less" scoped>
 .container {
   width: 1920px;
   height: 1080px;

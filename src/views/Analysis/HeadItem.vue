@@ -42,14 +42,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 header {
   height: 76px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: url("../assets/header.png") no-repeat center center;
+  background: url("../../assets/header.png") no-repeat center center;
 
   background-color: #001b46;
   box-shadow: 0px 7px 12px 0px rgba(0, 26, 78, 0.57);
@@ -70,7 +70,7 @@ height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("../assets/title.gif") no-repeat center bottom;
+    background: url("../../assets/title.gif") no-repeat center bottom;
     background-size:contain;
     box-shadow: 0px 2px 3px 0px rgba(0, 15, 57, 0.63);
   }
@@ -96,7 +96,7 @@ height: 100%;
     );
     font-size: 16px;
     color: #5db1ff;
-    background: url('../assets/jiao.gif') no-repeat right center;
+    background: url('../../assets/jiao.gif') no-repeat right center;
       background-size: 23px;
 
   }
