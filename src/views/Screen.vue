@@ -1,5 +1,8 @@
 <template>
-  <div class="container" v-if="obj">
+  <div
+    class="container"
+    v-if="obj"
+  >
     <head-item></head-item>
     <nav>
       <list-item
@@ -11,17 +14,23 @@
         :des="item.des"
       ></list-item>
     </nav>
-    <main >
-      <chart-item width="420px" style="margin-right: 15px">
+    <main>
+      <chart-item
+        width="420px"
+        style="margin-right: 15px"
+      >
         <template #item>
-          <div class="per" style="width: 390px; height: 400px" ref="per"></div>
+          <div
+            class="per"
+            style="width: 390px; height: 400px"
+            ref="per"
+          ></div>
         </template>
       </chart-item>
       <chart-item
         title="各险种缴费明细"
         width="960px"
         style="margin-right: 15px"
-       
       >
         <template #nav>
           <ul class="list">
@@ -83,14 +92,28 @@
           </div>
         </template>
       </chart-item>
-      <chart-item width="420px" title="各险种缴费补缴/退缴情况" :show="false">
+      <chart-item
+        width="420px"
+        title="各险种缴费补缴/退缴情况"
+        :show="false"
+      >
         <template #item>
-          <div style="width: 420px; height: 420px" ref="rader"></div>
+          <div
+            style="width: 420px; height: 420px"
+            ref="rader"
+          ></div>
         </template>
       </chart-item>
-      <chart-item width="600px" title="缴费趋势分析" option="全部">
+      <chart-item
+        width="600px"
+        title="缴费趋势分析"
+        option="全部"
+      >
         <template #item>
-          <div style="width: 620px; height: 250px" ref="bar"></div>
+          <div
+            style="width: 620px; height: 250px"
+            ref="bar"
+          ></div>
         </template>
       </chart-item>
       <chart-item
@@ -100,12 +123,22 @@
         style="margin-left: 11px; margin-right: 11px"
       >
         <template #item>
-          <div style="width: 600px; height: 300px" ref="axis"></div>
+          <div
+            style="width: 600px; height: 300px"
+            ref="axis"
+          ></div>
         </template>
       </chart-item>
-      <chart-item width="600px" title="补缴/退缴趋势分析" option="全部">
+      <chart-item
+        width="600px"
+        title="补缴/退缴趋势分析"
+        option="全部"
+      >
         <template #item>
-          <div style="width: 100%; height: 270px" ref="mix"></div>
+          <div
+            style="width: 100%; height: 270px"
+            ref="mix"
+          ></div>
         </template>
       </chart-item>
     </main>
@@ -193,6 +226,14 @@ export default {
       // immediate: true, // 组件实例创建时，立刻调用 handler 处理器
     }
   },
+ created(){
+    
+  this._trimerID = setInterval(() => {
+      this.arr = this.arr.map((item) => item + 1)
+      this.list = this.list.map((item) => item - 1)
+      // console.log('time')
+    }, 1000)
+  },
   mounted () {
     perChart(this.$refs.per)
     raderChart(this.$refs.rader)
@@ -200,11 +241,7 @@ export default {
     axisChart(this.$refs.axis)
     mix1Chart(this.$refs.mix)
 
-    this._trimerID = setInterval(() => {
-      this.arr = this.arr.map((item) => item + 1)
-      this.list = this.list.map((item) => item - 1)
-      // console.log('time')
-    }, 1000)
+  
   },
   beforeDestroy(){
     clearInterval(this._trimerID)

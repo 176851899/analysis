@@ -42,7 +42,7 @@
             <template #item>
               <div
                 class="education"
-                style="width: 540px; height: 220px;margin-top:-20px;"
+                style="width: 540px; height: 220px;margin-top:10px;"
                 ref="education"
               ></div>
             </template>
@@ -120,13 +120,13 @@ import ListItem from './Analysis/ListItem.vue'
 import ChartContainer from './Analysis/ChartContainer.vue'
 import {getArchivalData} from '../api/analysis'
 import {
-  sexChart,
-  ageChart,
-  educationChart,
-  archivesChart,
+  sexPublishChart,
+  agePublishChart,
+  educationPublishChart,
+  archivesAnalysisChart,
   natureChart,
   nationChart,
-  mapChart
+  laborTransferChart
 } from '../instantiation/analysis.js'
 export default {
   name: 'home',
@@ -143,19 +143,19 @@ export default {
           url: require('../assets/档案总存档.png'),
           title: '档案总存档',
           amount: '046199',
-          scale: ['-2.56%', '2.56%']
+          scale: ['-2.56%', '1.56%']
         },
         {
           url: require('../assets/档案接受量.png'),
           title: '档案接受量',
           amount: '546699',
-          scale: ['-2.56%', '2.56%']
+          scale: ['-2.56%', '3.56%']
         },
         {
           url: require('../assets/档案转出量.png'),
           title: '档案转出量',
           amount: '001199',
-          scale: ['-2.56%', '2.56%']
+          scale: ['-2.56%', '0.56%']
         },
         {
           url: require('../assets/档案借阅量.png'),
@@ -202,34 +202,34 @@ export default {
     }
   },
   created(){
-   getArchivalData().then(res => { 
+   getArchivalData()
+    .then(res => { 
       // console.log(res)
       this.mock=res
-      archivesChart(this.$refs.archives,this.mock)
-    
-    }).catch(error =>{
+      archivesAnalysisChart(this.$refs.archives,this.mock)
+    })
+    .catch(error =>{
       console.log(error,'异常')
- })
-
+  })
   },
   mounted () {
-    // 实列图表
-    sexChart(this.$refs.sex)
-    ageChart(this.$refs.age)
-    educationChart(this.$refs.education)
+    // 创建实列图表
+    sexPublishChart(this.$refs.sex)
+    agePublishChart(this.$refs.age)
+    educationPublishChart(this.$refs.education)
     natureChart(this.$refs.nature)
     nationChart(this.$refs.nation)
-    mapChart(this.$refs.map)
+    laborTransferChart(this.$refs.map)
   },
   beforeDestroy(){
-    // 销毁图表
-    sexChart(this.$refs.sex,true)
-    ageChart(this.$refs.age,true)
-    educationChart(this.$refs.education,true)
-    natureChart(this.$refs.nature,true)
-    nationChart(this.$refs.nation,true)
-    mapChart(this.$refs.map,true)
-    archivesChart(this.$refs.archives,this.mock,true)
+    // 销毁图表实列
+   sexPublishChart(this.$refs.sex,true)
+   agePublishChart(this.$refs.age,true)
+   educationPublishChart(this.$refs.education,true)
+   natureChart(this.$refs.nature,true)
+   nationChart(this.$refs.nation,true)
+   laborTransferChart(this.$refs.map,true)
+   archivesAnalysisChart(this.$refs.archives,this.mock,true)
   }
   
 }

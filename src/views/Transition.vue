@@ -1,32 +1,45 @@
 <template>
-       
-    <div>
-       <div class="Tips">
-        <router-link to="/pag/screen" custom v-slot="{ navigate, isActive }">
-            <li @click="navigate" :class="isActive? 'active':''">
-                 社保缴费分析
-            </li>
-        </router-link>
-         <router-link to="/pag/analysis" custom v-slot="{ navigate, isActive }">
-            <li @click="navigate" :class="isActive? 'active':''">
-                 流动人口
-            </li>
-        </router-link>
-         
-       </div>
-      <router-view> </router-view>
+  <!-- 项目大屏入口 -->
+  <div>
+    <div class="Tips">
+      <router-link
+        to="/pag/screen"
+        custom
+        v-slot="{ navigate, isActive }"
+      >
+        <li
+          @click="navigate"
+          :class="isActive? 'active':''"
+        >
+          社保缴费分析
+        </li>
+      </router-link>
+      <router-link
+        to="/pag/analysis"
+        custom
+        v-slot="{ navigate, isActive }"
+      >
+        <li
+          @click="navigate"
+          :class="isActive? 'active':''"
+        >
+          流动人口
+        </li>
+      </router-link>
+
     </div>
-    
+    <router-view> </router-view>
+  </div>
+
 </template>
 <script>
 
 export default {
-  name: 'App'
-
+   name: 'App'
 }
 </script>
 <style lang="less" scoped>
-i {
+i  {
   font-weight: normal;
   font-style: normal;
 }
@@ -50,8 +63,7 @@ i {
     }
   }
 }
-ul,
-li {
+ul,li {
   list-style: none;
 }
 .Tips{
@@ -73,13 +85,6 @@ li {
     height: 50px;
     font-size: 16px;
   }
-  @keyframes play {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(1000px)
-  }
-}
+
 }
 </style>

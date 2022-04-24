@@ -1,8 +1,6 @@
 <template>
-       
-      
-    <screen-adapter style="overflow:hidden;"> 
-       <!-- <div class="Tips">
+  <screen-adapter style="overflow:hidden;">
+    <!-- <div class="Tips">
         <router-link to="/screen" custom v-slot="{ navigate, isActive }">
             <li @click="navigate" :class="isActive? 'active':''">
                  社保缴费分析
@@ -15,9 +13,9 @@
         </router-link>
          
        </div> -->
-      <router-view> </router-view>
-    </screen-adapter> 
-    
+    <router-view> </router-view>
+  </screen-adapter>
+
 </template>
 <script>
 import ScreenAdapter from './components/screenAdapter.vue'

@@ -5,14 +5,14 @@ import axios from 'axios'
 // const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:80' : '真实接口baseurl'
 // 创建 axios 实例
 const service = axios.create({
-//   baseURL, // 基准的 URL 路径
+  //   baseURL, // 基准的 URL 路径
   timeout: 3000, // 超时时间
 })
 
 // 请求拦截
 service.interceptors.request.use(config => {
   // 通常在请求拦截时，会向请求头中添加 token 认证字段的传递.
-//   config.headers['x-token'] = ''
+  //   config.headers['x-token'] = ''
   return config
 
 })

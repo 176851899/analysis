@@ -22,7 +22,7 @@ export default {
       style: {
         width: this.width + 'px',
         height: this.height + 'px',
-        transform: 'scale(1) translate(-50%, -50%)'
+        transform: 'scale(1) translate(-50%, -50%)' // 默认不缩放，垂直水平居中
       }
     }
   },
