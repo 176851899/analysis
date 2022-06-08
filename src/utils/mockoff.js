@@ -3,6 +3,7 @@
  *   -判断是否为开发环境
  * */
 (async () => {
+  console.log(process.env.NODE_ENV)
   // console.log(process.env.NODE_ENV === 'development'?import('../mock/index.js').then():'')
   if (process.env.NODE_ENV === 'development') {
     try {

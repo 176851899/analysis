@@ -23,8 +23,9 @@
           @click="navigate"
           :class="isActive? 'active':''"
         >
-          流动人口
-        </li>
+          流动人口</li>
+        
+
       </router-link>
 
     </div>

@@ -20,7 +20,11 @@
       <!-- 图表部分 -->
       <section class="chart-container">
         <div class="left">
-          <chart-container width="540px" height="240px" title="性别发布">
+          <chart-container
+            width="540px"
+            height="240px"
+            title="性别发布"
+          >
             <template #item>
               <div
                 class="sex"
@@ -29,7 +33,11 @@
               ></div>
             </template>
           </chart-container>
-          <chart-container width="540px" height="280px" title="年龄发布">
+          <chart-container
+            width="540px"
+            height="280px"
+            title="年龄发布"
+          >
             <template #item>
               <div
                 class="age"
@@ -38,7 +46,11 @@
               ></div>
             </template>
           </chart-container>
-          <chart-container width="540px" height="280px" title="学历分布">
+          <chart-container
+            width="540px"
+            height="280px"
+            title="学历分布"
+          >
             <template #item>
               <div
                 class="education"
@@ -53,7 +65,7 @@
             <p class="title">劳动转移情况</p>
             <div class="btn">
               <span>转入</span>
-              <span >转出</span>
+              <span>转出</span>
             </div>
             <div
               class="map-item"
@@ -64,7 +76,10 @@
           <div class="table">
             <p class="title">转移人数排行</p>
             <ul>
-              <li v-for="item in pepoleList" :key="item.title">
+              <li
+                v-for="item in pepoleList"
+                :key="item.title"
+              >
                 <p
                   class="address"
                   :style="{ backgroundImage: 'url(' + item.url + ')' }"
@@ -78,7 +93,11 @@
           </div>
         </div>
         <div class="right">
-          <chart-container width="540px" height="240px" title="存档性质分析">
+          <chart-container
+            width="540px"
+            height="240px"
+            title="存档性质分析"
+          >
             <template #item>
               <div
                 class="nature"
@@ -87,7 +106,11 @@
               ></div>
             </template>
           </chart-container>
-          <chart-container width="540px" height="280px" title="存档民族分析">
+          <chart-container
+            width="540px"
+            height="280px"
+            title="存档民族分析"
+          >
             <template #item>
               <div
                 class="nation"
@@ -205,7 +228,7 @@ export default {
    getArchivalData()
     .then(res => { 
       // console.log(res)
-      this.mock=res
+      this.mock=res   
       archivesAnalysisChart(this.$refs.archives,this.mock)
     })
     .catch(error =>{

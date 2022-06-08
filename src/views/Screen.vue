@@ -165,7 +165,7 @@ export default {
   },
   data () {
     return {
-      obj: [
+obj: [
         {
           url: img70,
           title: '个人缴费金额',
@@ -190,7 +190,7 @@ export default {
           desc: '34.56',
           des: '+2.5%'
         },
-        {
+      {
           url: img44,
           title: '征缴率',
           desc: '96',
@@ -497,7 +497,7 @@ export default {
     background-size: cover;
     position: absolute;
    top: 10px;
-    animation: play1 3s infinite linear alternate;
+    animation: play 3s infinite linear alternate;
     left: 330px;
   
 

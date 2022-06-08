@@ -37,6 +37,7 @@ export default {
     date () {
       this.curDate = dayjs().format('YYYY年MM月DD日')
       this.data = this.curDate.slice(0, 8).split('-').join('')
+      console.log(this.curDate,this.data)
     }
   }
 }

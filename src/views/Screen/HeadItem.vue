@@ -22,12 +22,12 @@ export default {
   name: 'headItem',
   data () {
     return {
-      curDate:null,
+      curDate:null, 
       data:null
     }
   },
-  mounted(){
-    this.curDate=dayjs().format('YYYY-MM-DD HH:mm ')
+          mounted(){
+     this.curDate=dayjs().format('YYYY-MM-DD HH:mm ')
     this.data=this.curDate.slice(0, 8).split('-').join('')
   }
 }

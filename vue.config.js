@@ -7,10 +7,10 @@ module.exports = {
 // webpack
   configureWebpack: {
     // 添加cdn引入，
-    devtool: false,
-    externals: {
-      echarts: 'echarts',
-    }
+    // devtool: false,
+    // externals: {
+    //   echarts: 'echarts',
+    // }
     // ...其它配置
     // ...其它配置
   },

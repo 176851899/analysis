@@ -1,7 +1,9 @@
 <template>
   <div class="errow">
-
-    <img src="../asset/404.png" alt="">
+    <img
+      src="../asset/404.png"
+      alt=""
+    >
     <div>哎呀~页面找不到了(╥╯^╰╥)</div>
   </div>
 </template>
@@ -9,7 +11,7 @@
 <script>
 
   export default {
-    name: 'app'
+       name: 'app'
   }
 </script>
 
