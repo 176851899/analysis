@@ -26,7 +26,18 @@
           流动人口
         </li>
       </router-link>
-
+      <router-link
+        to="/pag/demo"
+        custom
+        v-slot="{ navigate, isActive }"
+      >
+        <li
+          @click="navigate"
+          :class="isActive? 'active':''"
+        >
+          Demo
+        </li>
+      </router-link>
     </div>
     <router-view> </router-view>
   </div>
@@ -69,7 +80,7 @@ ul,li {
 .Tips{
   position: fixed;
   color: #fff;
-  width: 200px;
+  width: 300px;
   min-height: 100px;
   left:15%;
   top:6%;

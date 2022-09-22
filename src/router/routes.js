@@ -3,8 +3,7 @@
 const Analysis = () => import('@/views/Analysis')
 const Screen = () => import('@/views/Screen')
 
-const routes = [
-  {
+const routes = [{
     path: '/pag',
     // 嵌套路由
     component: () => import('@/views/Transition.vue'),
@@ -17,6 +16,11 @@ const routes = [
         path: '/pag/screen',
         name: 'Screen',
         component: Screen
+      },
+      {
+        path: '/pag/demo',
+        name: 'Demo',
+        component: () => import('@/views/Demo.vue'),
       },
       {
         path: '/pag',

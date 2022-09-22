@@ -241,8 +241,9 @@ const agePublishChart = (element, dispose) => {
   // 占比数据
   const scaleLIst = ['12%', '16%', '10%', '12%', '30%', '22%', '12%']
   const option = {
+    // 图表位置
     grid: {
-      left: '5%',
+      left: '15%',
       right: '5%',
       bottom: '5%',
       top: '10%',
@@ -376,7 +377,7 @@ const agePublishChart = (element, dispose) => {
   }
 }
 // 教育分布
-const educationPublishChart1= (element, dispose) => {
+const educationPublishChart1 = (element, dispose) => {
   var myChart = echarts.init(element)
   var format = [{
       value: 60,
@@ -608,7 +609,7 @@ const educationPublishChart = (element, dispose) => {
         name: '',
         type: 'funnel',
         left: '63',
-        top:'25',
+        top: '25',
         right: 200,
         width: '57%',
         height: '80%',
@@ -681,14 +682,14 @@ const educationPublishChart = (element, dispose) => {
             value: 100,
             name: '中专及以下'
           },
-          
+
         ]
       },
       {
         name: '',
         type: 'funnel',
         left: '100',
-        top:'25',
+        top: '25',
         right: 'center',
         bottom: 0,
         width: '43%',
@@ -722,28 +723,27 @@ const educationPublishChart = (element, dispose) => {
           },
         },
 
-        data:  [
+        data: [{
+            value: 60,
+            name: '硕士及以上'
+          },
           {
-          value: 60,
-          name: '硕士及以上'
-        },
-        {
-          value: 40,
-          name: '高中'
-        },
-        {
-          value: 20,
-          name: '专科'
-        },
-        {
-          value: 80,
-          name: '本科'
-        },
-        {
-          value: 100,
-          name: '中专及以下'
-        },
-       
+            value: 40,
+            name: '高中'
+          },
+          {
+            value: 20,
+            name: '专科'
+          },
+          {
+            value: 80,
+            name: '本科'
+          },
+          {
+            value: 100,
+            name: '中专及以下'
+          },
+
         ],
       },
     ]
