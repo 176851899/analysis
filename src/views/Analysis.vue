@@ -2,6 +2,7 @@
   <div class="container">
     <head-item title="流动人员档案情况分析">
       <template #city>
+    
         <div class="city">新疆维吾尔自治区</div>
       </template>
     </head-item>

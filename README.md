@@ -1,3 +1,10 @@
+<!--
+ * @Author: Ren Bing
+ * @Date: 2022-09-19 10:20:28
+ * @LastEditors: Ren Bing
+ * @LastEditTime: 2022-10-12 13:30:31
+ * @Description: 请填写简介
+-->
 # screen
 
 ## Project setup
@@ -25,5 +32,6 @@ npm run lint
 ```
 
 ### Customize configuration
-
+node 版本基于
+14
 See [Configuration Reference](https://cli.vuejs.org/config/).

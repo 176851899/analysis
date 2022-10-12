@@ -1,3 +1,10 @@
+<!--
+ * @Author: Ren Bing
+ * @Date: 2022-09-19 10:20:28
+ * @LastEditors: Ren Bing
+ * @LastEditTime: 2022-10-09 13:45:19
+ * @Description:  项目大屏入口
+-->
 <template>
   <!-- 项目大屏入口 -->
   <div>

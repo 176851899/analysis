@@ -4,6 +4,7 @@ import echarts from 'echarts'
  * @param {obj} element - 挂载的对象.
  *  @param {boolean} dispose -是否销毁
  * */
+
 const sexPublishChart = (element, dispose) => {
   var myChart = echarts.init(element)
   const res = [{
