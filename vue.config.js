@@ -1,3 +1,10 @@
+/*
+ * @Author: Ren Bing
+ * @Date: 2022-11-08 09:52:48
+ * @LastEditors: Ren Bing
+ * @LastEditTime: 2023-08-23 17:43:31
+ * @Description: 请填写简介
+ */
 module.exports = {
   // lintOnSave: false, // 暂时关闭代码格式检测
   outputDir: 'dist', // 当运行 vue-cli-service build 时生成的生产环境构建文件的目录
@@ -14,6 +21,16 @@ module.exports = {
     // ...其它配置
     // ...其它配置
   },
+  chainWebpack:config=>{
+  //   config.module
+  //   .rule('worker')
+  // .test(/\.worker\.js$/)
+  // .use('worker-loader')
+  //   .loader('worker-loader')
+  // .options({
+  //   inline:'fallback'
+  //   })
+    },
 }
 // 启动仪式
 if (process.env.NODE_ENV !== 'production') {
