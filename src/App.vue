@@ -30,25 +30,25 @@ export default {
     }
   },
   created(){
-this.worker=VueWorker.create([
-{
-message:'hello',
-func:function(e){
-console.log('hello',e) 
-return'hiyiye'
-}
-},{
-message:'world!',
-func:function(e){
-console.log(e)
-}
-}
-])
+// this.worker=VueWorker.create([
+// {
+// message:'hello',
+// func:function(e){
+// console.log('hello',e) 
+// return'hiyiye'
+// }
+// },{
+// message:'world!',
+// func:function(e){
+// console.log(e)
+// }
+// }
+// ])
 },
 mounted(){
-this.worker.postMessage('hello',[{a:33}]).then(function(e){
-console.log('post:',e); 
-})
+// this.worker.postMessage('hello',[{a:33}]).then(function(e){
+// console.log('post:',e); 
+// })
 }
 
 
