@@ -1,6 +1,6 @@
 <template>
   <screen-adapter style="overflow:hidden;">
-    <!-- <div class="Tips">
+    <div class="Tips">
         <router-link to="/screen" custom v-slot="{ navigate, isActive }">
             <li @click="navigate" :class="isActive? 'active':''">
                  社保缴费分析
@@ -12,7 +12,7 @@
             </li>
         </router-link>
          
-       </div> -->
+       </div>
     <router-view> </router-view>
   </screen-adapter>
 

@@ -1,3 +1,10 @@
+/*
+ * @Author: Ren Bing
+ * @Date: 2022-11-08 09:52:48
+ * @LastEditors: Ren Bing
+ * @LastEditTime: 2023-11-22 18:08:24
+ * @Description: 请填写简介
+ */
 module.exports = {
   root: true,
   env: {
@@ -5,8 +12,8 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    '@vue/standard',
-    'prettier'
+    // '@vue/standard',
+    // 'prettier'
   ],
   parserOptions: {
     parser: 'babel-eslint'
