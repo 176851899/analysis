@@ -36,4 +36,5 @@ npm run lint
 node 版本基于
 14
 git提交时报错，却换node版本再提交就成功了
+feat: 添加全国地图数据
 See [Configuration Reference](https://cli.vuejs.org/config/).
