@@ -1265,6 +1265,7 @@ const nationChart = (element, dispose) => {
 }
 // 劳动转移
 const laborTransferChart = (element, dispose) => {
+  const target=[120.152575,30.266619]
   var myChart = echarts.init(element)
   var chinaMap = {
     type: 'FeatureCollection',
@@ -13599,10 +13600,14 @@ const laborTransferChart = (element, dispose) => {
             curveness: 0.4 // 尾迹线条曲直度
           }
         },
+        // "lng": 120.152575,
+        // "lat": 30.266619,
+        // [120.152575,30.266619]
         data: [{
             coords: [
               [118.8062, 31.9208],
-              [119.4543, 25.9222]
+              target
+              // [119.4543, 25.9222]
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13611,7 +13616,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [127.9688, 45.368],
-              [119.4543, 25.9222]
+              target
+              // [119.4543, 25.9222]
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13620,7 +13626,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [110.3467, 41.4899],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13629,7 +13636,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [125.8154, 44.2584],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13638,7 +13646,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [116.4551, 40.2539],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13647,7 +13656,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [123.1238, 42.1216],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#214778'
@@ -13656,7 +13666,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [114.4995, 38.1006],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13666,7 +13677,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [109.1162, 34.2004],
-              [119.4543, 25.9222]
+               // [119.4543, 25.9222]
+               target
             ],
             lineStyle: {
               color: '#214778'
@@ -13675,7 +13687,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [103.9526, 30.7617],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13684,7 +13697,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [108.384366, 30.439702],
-              [119.4543, 25.9222]
+             // [119.4543, 25.9222]
+             target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13693,7 +13707,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [113.0823, 28.2568],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
@@ -13702,7 +13717,8 @@ const laborTransferChart = (element, dispose) => {
           {
             coords: [
               [102.9199, 25.46639],
-              [119.4543, 25.9222]
+              // [119.4543, 25.9222]
+              target
             ],
             lineStyle: {
               color: '#e6da1b'
