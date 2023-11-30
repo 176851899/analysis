@@ -2,7 +2,7 @@
  * @Author: Ren Bing
  * @Date: 2022-11-08 09:52:48
  * @LastEditors: Ren Bing
- * @LastEditTime: 2023-11-27 11:56:29
+ * @LastEditTime: 2023-11-30 11:08:07
  * @Description: 请填写简介
 -->
 
@@ -34,7 +34,7 @@ npm run lint
 
 ### Customize configuration
 node 版本基于
-14
+14，如果报错12.18.3，切换node试一试
 git提交时报错，却换node版本再提交就成功了
 feat: 添加全国地图数据
 See [Configuration Reference](https://cli.vuejs.org/config/).
